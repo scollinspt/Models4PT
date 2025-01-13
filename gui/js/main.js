@@ -700,6 +700,9 @@ function supportsSVG() {
 	document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.0");
 };
 
+// The exportPDF function submits a request to the backend to export the graph as a PDF.
+// This functionality is disabled temporarily while transitioning to localStorage.
+/*
 function exportPDF(){
 	if( supportsSVG() ){
 		document.getElementById("exportformsvg").value = document.getElementById("canvas").innerHTML;
@@ -707,6 +710,7 @@ function exportPDF(){
 		document.getElementById("exportform").submit();
 	}
 }
+*/
 
 function exportBitmap( format ){
 	if( !format ) format = "png"
@@ -771,7 +775,9 @@ function exportSVG(){
 	document.body.removeChild( a )
 	window.URL.revokeObjectURL( url )
 }
-
+// The hostName function dynamically determines the backend URL based on the environment.
+// Currently disabled as we are transitioning to localStorage for save/load functionality.
+/*
 function hostName(){
 	switch( window.location.hostname ){
 		case "dagitty.net":
@@ -783,6 +789,7 @@ function hostName(){
 	}
 	return "dagitty.net";
 }
+*/
 
 /** Dialogues for online model storage */
 
@@ -810,7 +817,13 @@ function saveOnlineForm(){
 	}
 }
 
-async function loadOnline( url ){
+/* 
+The original loadOnline function fetched a model from dagitty.net using an API call.
+This version has been commented out as we are transitioning to using localStorage
+for saving and loading models. When we implement a backend in the future, we may revisit
+or adapt this function to integrate with our own backend.
+
+	async function loadOnline( url ){
 	var graphid = getModelIdFromURL( url )
 	try{
 	   	const response = await fetch( "https://dagitty.net/db/id/"+graphid )
@@ -828,9 +841,57 @@ async function loadOnline( url ){
 		console.log( err );
 		return
 	}
+} */
+
+// New localStorage-based version	
+async function loadOnline(url) {
+	var graphid = getModelIdFromURL(url); // Extract the graph ID from the URL
+	try {
+		// Retrieve the model from localStorage using the graph ID
+		const modelData = localStorage.getItem(graphid);
+		if (!modelData) {
+			alert("Model not found in localStorage. Please check the ID and try again.");
+			return;
+			}
+	
+		// Parse the stored JSON data
+		const modelsyntax = JSON.parse(modelData);
+	
+		// Update the UI and render the DAG
+		DAGittyControl.getView().closeDialog();
+		document.getElementById("adj_matrix").value = modelsyntax.g;
+		Model.uniqid = graphid; // Optional: track the graph ID
+		loadDAGFromTextData(); // Render the graph
+	} catch (err) {
+		alert("Failed to load model. Please try again.");
+		console.log(err);
+	}
+}
+	
+// Updated loadOnlineForm function for localStorage:
+// This version prompts the user for a Graph ID instead of a URL and loads the model from localStorage.
+function loadOnlineForm() {
+    DAGittyControl.getView().openPromptDialog(
+        "Enter the Graph ID",
+        "exampleGraph123", // Example placeholder
+        function (graphID) {
+            if (!graphID) {
+                alert("Graph ID is required to load a model.");
+                return;
+            }
+            loadOnline(graphID); // Call the updated loadOnline function
+        }
+    );
 }
 
-function loadOnlineForm(){
+
+/* 
+The original loadOnlineForm function opened a prompt dialog for the user to enter a URL.
+This functionality relied on models stored remotely on dagitty.net.
+As we transition to localStorage, this version has been replaced with one that prompts for a Graph ID instead of a URL.
+
+Original code:
+	function loadOnlineForm(){
 	DAGittyControl.getView().openPromptDialog(
 		"Enter the URL","dagitty.net/mOWOV4V",loadOnline)
-}
+} */
