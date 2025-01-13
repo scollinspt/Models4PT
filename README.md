@@ -1,6 +1,8 @@
-# Models4PT: Fork of DAGitty
+# Models4PT: Inspired by DAGitty
 
-This repository is a fork of the [DAGitty](https://dagitty.net) project, which provides a collection of algorithms, a GUI frontend, and an R package for analyzing graphical causal models (DAGs). While preserving DAGitty’s original functionality and scope, this fork is being customized to support **physical therapy (PT) and healthcare research** as part of the **Clinical Inquiry Network** ecosystem.
+**Models4PT** is a dynamic tool for creating and analyzing graphical causal models, inspired by the foundational work of [DAGitty](https://dagitty.net). While preserving and building upon DAGitty’s robust algorithms and user interface, **Models4PT** is being independently developed to meet the unique needs of physical therapy (PT) clinicians and researchers.
+
+This repository expands [DAGitty's](https://dagitty.net) core functionality to integrate into the broader **Clinical Inquiry Network** ecosystem, supporting advanced clinical reasoning, causal modeling, and evidence-based practice in physical therapy.
 
 ---
 
@@ -53,18 +55,6 @@ To support comprehensive clinical reasoning, Models4PT will integrate options fo
 
 ---
 
-## **Original DAGitty Project**
-
-The original DAGitty project is maintained by Johannes Textor and collaborators. This fork builds on their robust foundation to address domain-specific needs in physical therapy.
-
-For more information on DAGitty, visit:
-- Website: [dagitty.net](https://dagitty.net)
-- Publications:
-  1. Textor, J., et al. (2017). [Robust causal inference using directed acyclic graphs](https://doi.org/10.1093/ije/dyw341). *International Journal of Epidemiology*.
-  2. Ankan, A., et al. (2021). [Testing Graphical Causal Models Using the R Package “dagitty”](https://doi.org/10.1002/cpz1.45). *Current Protocols*.
-
----
-
 ## **Running the GUI Locally**
 
 To test or use the current version of Models4PT locally:
@@ -76,7 +66,13 @@ To test or use the current version of Models4PT locally:
 
 ## **Acknowledgments**
 
-We extend our gratitude to Johannes Textor and the DAGitty team for their pioneering work in causal modeling and for making this project possible through open-source collaboration.
+We extend our gratitude to [DAGitty.net](https://dagitty.net) and its creator, Johannes Textor, for their pioneering work in causal modeling. Models4PT builds upon DAGitty’s robust foundation to create a tailored tool for physical therapy professionals and researchers.
+
+For more information on DAGitty, visit:
+- Website: [dagitty.net](https://dagitty.net)
+- Publications:
+  1. Textor, J., et al. (2017). [Robust causal inference using directed acyclic graphs](https://doi.org/10.1093/ije/dyw341). *International Journal of Epidemiology*.
+  2. Ankan, A., et al. (2021). [Testing Graphical Causal Models Using the R Package “dagitty”](https://doi.org/10.1002/cpz1.45). *Current Protocols*.
 
 ---
 
