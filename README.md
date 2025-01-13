@@ -87,3 +87,5 @@ For questions about this fork or collaboration opportunities, please contact:
   [Peripatetic PT](https://peripateticpt.substack.com/)  
   [Stats4PT](https://peripateticpt.substack.com/p/welcome-to-stats4pt)  
   [Clinical Inquiry Fellowship](https://peripateticpt.substack.com/p/clinical-inquiry-fellowship)  
+
+  Updated as of January 13, 2025
