@@ -15,6 +15,9 @@
 *   along with this program; if not, write to the Free Software
 *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. */
 
+console.log("main.js is loaded and running");
+
+
 var GUI = {
 	view_mode : "DAG",
 	highlight_causal : true,
@@ -895,3 +898,90 @@ Original code:
 	DAGittyControl.getView().openPromptDialog(
 		"Enter the URL","dagitty.net/mOWOV4V",loadOnline)
 } */
+
+		// ----------------------------
+// Save and Load Functionality
+// ----------------------------
+
+function saveModel(graphid, modelData) {
+    try {
+        // Save the model data as a JSON string in localStorage
+        localStorage.setItem(graphid, JSON.stringify({ syntax: modelData }));
+        console.log(`Model saved: ${graphid}`, modelData); // Log success
+        alert("Model saved successfully!");
+    } catch (error) {
+        console.error("Error saving model:", error);
+        alert("Failed to save model. Please try again.");
+    }
+}
+
+
+function saveModelPrompt() {
+    // Prompt the user for a unique Graph ID
+    const graphid = prompt("Enter a unique ID for your graph:");
+    if (!graphid) {
+        alert("Graph ID is required to save the model.");
+        return;
+    }
+
+    // Retrieve the model data from the DOM (e.g., from an element with id "adj_matrix")
+    const modelData = document.getElementById("adj_matrix").value; // Replace with actual model data source
+    if (!modelData) {
+        alert("No model data found to save.");
+        return;
+    }
+
+    console.log("Saving model with ID:", graphid, "and data:", modelData); // Log before saving
+    saveModel(graphid, modelData); // Call saveModel to handle the actual saving
+}
+
+
+function loadModel(graphid) {
+    try {
+        // Retrieve the model data from localStorage
+        const modelData = localStorage.getItem(graphid);
+        if (!modelData) {
+            alert("Model not found. Please check the ID and try again.");
+            return;
+        }
+
+        // Parse the model data from JSON
+        const parsedData = JSON.parse(modelData);
+
+        // Update the UI (e.g., populate the adjacency matrix input)
+        const adjMatrixElement = document.getElementById("adj_matrix");
+        if (!adjMatrixElement) {
+            console.error("Element with ID 'adj_matrix' not found.");
+            alert("Failed to load model. Please check the UI setup.");
+            return;
+        }
+        adjMatrixElement.value = parsedData.syntax;
+
+        // Call a function to render the DAG (assumes loadDAGFromTextData exists in your codebase)
+        if (typeof loadDAGFromTextData === "function") {
+            loadDAGFromTextData();
+        } else {
+            console.warn("loadDAGFromTextData function not found. DAG rendering may not work.");
+        }
+
+        console.log(`Successfully loaded model: ${graphid}`, parsedData); // Debugging log
+    } catch (error) {
+        console.error("Error loading model:", error);
+        alert("Failed to load model. Please try again.");
+    }
+}
+
+
+function loadModelPrompt() {
+    // Prompt the user for the Graph ID to load
+    const graphid = prompt("Enter the Graph ID to load:");
+    if (!graphid) {
+        alert("Graph ID is required to load a model.");
+        return;
+    }
+
+    console.log("Attempting to load model with ID:", graphid); // Debugging log
+    loadModel(graphid); // Call loadModel to handle the loading process
+}
+
+

@@ -139,23 +139,69 @@
       <li><a href="javascript:void(0)" id="menu_model_title">Model</a>
          <ul id="menu_model" style="z-Index:15">
             <li><a href="#" onclick="newModel();displayHide('menu_model')">New model</a></li>
-            <li><a href="#" onclick="loadOnlineForm();displayHide('menu_model')">Load from dagitty.net</a></li>
+            <!-- <li><a href="#" onclick="loadOnlineForm();displayHide('menu_model')">Load from dagitty.net</a></li> -->
+            <li><a href="#" onclick="loadModelPrompt();displayHide('menu_model')">Load from Local Storage</a></li>
             <li><a href="#" onclick="exportPNG();displayHide('menu_model')">Export as PNG</a></li>
             <li><a href="#" onclick="exportJPEG();displayHide('menu_model')">Export as JPEG</a></li>
             <!--<li><a href="#" onclick="exportSVG();displayHide('menu_model')">Export as SVG</a></li>-->
-            <li><a href="#" onclick="saveOnlineForm();displayHide('menu_model')">Publish on dagitty.net</a></li>
+            <!-- <li><a href="#" onclick="saveOnlineForm();displayHide('menu_model')">Publish on dagitty.net</a></li> -->
+            <!-- <li><a href="#" onclick="saveModelPrompt();displayHide('menu_model')">Save Model Locally</a></li> -->
+            <li><a href="#" onclick="console.log('Save Model Locally clicked'); saveModelPrompt();">Save Model Locally</a></li>
 
+
+<!--        Moved entire script section to main.js     
             <script>
-                if( false && document.location.protocol == "https:" ){
-                    document.write('<li><a href="#" onclick="saveOnlineForm();displayHide(\'menu_model\')">Publish on dagitty.net</a></li>');
-                    document.write('<li><a href="#" onclick="updateOnlineForm();displayHide(\'menu_model\')">Update on dagitty.net</a></li>');
-                    document.write('<li><a href="#" onclick="deleteOnlineForm();displayHide(\'menu_model\')">Delete on dagitty.net</a></li>');
-            }
-
-               if( false && supportsSVG() ){
-                    document.write( '<li><a href="#" onclick="exportPDF();displayHide(\'menu_model\')">Export as PDF</a></li>' );
+               // Disabled menu items for interaction with dagitty.net
+               /*
+               if( false && document.location.protocol == "https:" ){
+                   document.write('<li><a href="#" onclick="saveOnlineForm();displayHide(\'menu_model\')">Publish on dagitty.net</a></li>');
+                   document.write('<li><a href="#" onclick="updateOnlineForm();displayHide(\'menu_model\')">Update on dagitty.net</a></li>');
+                   document.write('<li><a href="#" onclick="deleteOnlineForm();displayHide(\'menu_model\')">Delete on dagitty.net</a></li>');
                }
-            </script>
+           
+               if( false && supportsSVG() ){
+                   document.write( '<li><a href="#" onclick="exportPDF();displayHide(\'menu_model\')">Export as PDF</a></li>' );
+               }
+               */
+               // This function allows users to save a model locally to their browser's localStorage.
+               // The user is prompted to enter a unique Graph ID, and the graph data is stored under that ID.
+               function saveModelPrompt() {
+                  const graphid = prompt("Enter a unique ID for your graph:");
+                  if (!graphid) {
+                     alert("Graph ID is required to save the model.");
+                     return;
+                  }
+
+                  const modelData = document.getElementById("adj_matrix").value; // Replace with actual model data
+                  console.log("Saving model with ID:", graphid, "and data:", modelData); // Log before saving
+                  saveModel(graphid, modelData); // Save the model to localStorage
+               }
+
+               // Define the saveModel function
+               function saveModel(graphid, modelData) {
+               try {
+                  // Save the model data to localStorage
+                  localStorage.setItem(graphid, JSON.stringify({ syntax: modelData }));
+                  console.log(`Model saved: ${graphid}`, modelData); // Log saved data
+                  alert("Model saved successfully!");
+               } catch (error) {
+                  console.error("Error saving model:", error);
+                  alert("Failed to save model. Please try again.");
+               }
+            }
+            function loadModelPrompt() {
+               const graphid = prompt("Enter the Graph ID to load:");
+               if (!graphid) {
+                  alert("Graph ID is required to load a model.");
+                  return;
+               }
+
+               loadModel(graphid); // Call the function to load the model from localStorage
+}
+
+
+           </script> -->
+           
         <li><a href="#" onclick="exportTikzCode();displayHide('menu_model')">Export LaTeX code</a></li>
     </ul>
       </li>
