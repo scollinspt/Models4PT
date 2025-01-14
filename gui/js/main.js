@@ -904,16 +904,16 @@ Original code:
 // ----------------------------
 
 function saveModel(graphid, modelData) {
-    try {
-        // Save the model data as a JSON string in localStorage
-        localStorage.setItem(graphid, JSON.stringify({ syntax: modelData }));
-        console.log(`Model saved: ${graphid}`, modelData); // Log success
-        alert("Model saved successfully!");
-    } catch (error) {
-        console.error("Error saving model:", error);
-        alert("Failed to save model. Please try again.");
-    }
+    const currentTimestamp = new Date().toISOString(); // Get the current date and time
+    const modelWithTimestamp = {
+        syntax: modelData,
+        timestamp: currentTimestamp,
+    };
+
+    localStorage.setItem(graphid, JSON.stringify(modelWithTimestamp)); // Save with timestamp
+    console.log(`Model '${graphid}' saved at ${currentTimestamp}.`);
 }
+
 
 
 function saveModelPrompt() {
@@ -983,5 +983,95 @@ function loadModelPrompt() {
     console.log("Attempting to load model with ID:", graphid); // Debugging log
     loadModel(graphid); // Call loadModel to handle the loading process
 }
+
+// ----------------------------
+// View Saved Models
+// ----------------------------
+function viewSavedModels() {
+    // Retrieve all saved models from localStorage and sort alphabetically
+    const savedModels = Object.keys(localStorage).sort();
+
+    // If no models are saved, notify the user
+    if (savedModels.length === 0) {
+        alert("No models found in local storage.");
+        return;
+    }
+
+    // Create a list with timestamps
+    let modelList = "Saved Models (Alphabetical Order):\n\n";
+    savedModels.forEach((key, index) => {
+        // Parse the saved data to include timestamps if stored
+        const modelData = JSON.parse(localStorage.getItem(key));
+        const timestamp = modelData.timestamp || "Unknown Date";
+
+        modelList += `${index + 1}. ${key} (Last Modified: ${timestamp})\n`;
+    });
+
+    // Display the list to the user
+    const selectedModelIndex = prompt(
+        `${modelList}\nEnter the number of the model you want to load:`
+    );
+
+    if (selectedModelIndex) {
+        const modelIndex = parseInt(selectedModelIndex, 10) - 1;
+        if (modelIndex >= 0 && modelIndex < savedModels.length) {
+            const modelID = savedModels[modelIndex];
+            loadModel(modelID); // Load the selected model
+        } else {
+            alert("Invalid selection. Please try again.");
+        }
+    }
+}
+
+// ----------------------------
+// Delete Saved Models
+// ----------------------------
+
+function deleteModel(graphid) {
+    localStorage.removeItem(graphid);
+    console.log(`Model '${graphid}' deleted from localStorage.`);
+    alert(`Model '${graphid}' has been deleted.`);
+}
+
+
+function deleteModelPrompt() {
+    // Get all keys from localStorage and sort alphabetically
+    const savedModels = Object.keys(localStorage).sort();
+
+    // If no models are saved, notify the user
+    if (savedModels.length === 0) {
+        alert("No models found in local storage.");
+        return;
+    }
+
+    // Create a list with timestamps
+    let modelList = "Saved Models (Alphabetical Order):\n\n";
+    savedModels.forEach((key, index) => {
+        // Parse the saved data to include timestamps if stored
+        const modelData = JSON.parse(localStorage.getItem(key));
+        const timestamp = modelData?.timestamp || "Unknown Date";
+
+        modelList += `${index + 1}. ${key} (Last Modified: ${timestamp})\n`;
+    });
+
+    // Prompt the user to select a model to delete
+    const selectedModelIndex = prompt(
+        `${modelList}\nEnter the number of the model you want to delete:`
+    );
+
+    if (selectedModelIndex) {
+        const modelIndex = parseInt(selectedModelIndex, 10) - 1;
+        if (modelIndex >= 0 && modelIndex < savedModels.length) {
+            const modelID = savedModels[modelIndex];
+            const confirmDelete = confirm(`Are you sure you want to delete '${modelID}'?`);
+            if (confirmDelete) {
+                deleteModel(modelID); // Call deleteModel to handle deletion
+            }
+        } else {
+            alert("Invalid selection. Please try again.");
+        }
+    }
+}
+
 
 
