@@ -973,16 +973,20 @@ function loadModel(graphid) {
 
 
 function loadModelPrompt() {
-    // Prompt the user for the Graph ID to load
-    const graphid = prompt("Enter the Graph ID to load:");
+    // First, display the list of saved models
+    viewSavedModels();
+
+    // Then, prompt the user to select a model
+    const graphid = prompt("Enter the number corresponding to the model you want to load:");
     if (!graphid) {
-        alert("Graph ID is required to load a model.");
+        alert("Model ID is required to load a model.");
         return;
     }
 
-    console.log("Attempting to load model with ID:", graphid); // Debugging log
-    loadModel(graphid); // Call loadModel to handle the loading process
+    // Load the selected model
+    loadModel(graphid);
 }
+
 
 // ----------------------------
 // View Saved Models
