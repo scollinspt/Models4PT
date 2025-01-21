@@ -1,4 +1,1 @@
-# Changelog
-
-This file will be dynamically updated by GitHub Actions.
-
+* 8041000 - Update generate-changelog.yml (Sean Collins, 2025-01-21)
