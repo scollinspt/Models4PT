@@ -8,30 +8,18 @@ on:
 jobs:
   changelog:
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Checkout repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      # Step 2: Generate the changelog file
+      - name: Debug git log
+        run: |
+          git log --pretty=format:"* %h - %s (%an, %ad)" --date=short || echo "git log failed"
+
       - name: Generate Changelog
         run: |
           git log --pretty=format:"* %h - %s (%an, %ad)" --date=short > CHANGES.md
-
-      # Step 3: Debugging to ensure CHANGES.md was created
-      - name: Debug CHANGES.md
-        run: cat CHANGES.md || echo "CHANGES.md not created."
-
-      # Step 4: Configure GitHub Actions bot for commits
-      - name: Configure git
-        run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      # Step 5: Commit and push changes
-      - name: Commit and push changes
-        run: |
           git add CHANGES.md
           git commit -m "Update changelog"
           git push
