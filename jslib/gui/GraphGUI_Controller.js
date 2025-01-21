@@ -1,8 +1,8 @@
 
 /* globals ObservedGraph,Class,_,Graph,Models4PTGraphView,GraphParser,GraphLayouter */
-/* exported DAGittyController */
+/* exported Models4PTController */
 
-var DAGittyController = Class.extend({
+var Models4PTController = Class.extend({
 	init : function( obj ){
 		this.event_listeners = {
 			"graphchange" : [],
@@ -289,7 +289,7 @@ var DAGitty = {
 		if( !("mutable" in op) ){
 			op.mutable = false
 		}
-		var c = new DAGittyController( op )
+		var c = new Models4PTController( op )
 		this.controllers.push( c )
 		if( el.id ){
 			this.controllers_by_id[el.id] = c
