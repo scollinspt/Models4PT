@@ -1,14 +1,14 @@
 # Models4PT: Inspired by DAGitty
 
-**Models4PT** is a dynamic tool for creating and analyzing graphical causal models, inspired by the foundational work of [DAGitty](https://dagitty.net). While preserving and building upon DAGitty’s robust algorithms and user interface, **Models4PT** is being independently developed to meet the unique needs of physical therapy (PT) clinicians and researchers.
+**Models4PT** will be (is) a dynamic tool for creating and analyzing graphical causal models, inspired by the foundational work of [DAGitty](https://dagitty.net). While preserving and building upon DAGitty’s robust algorithms and user interface, **Models4PT** is being developed to meet the unique needs of physical therapy (PT) clinicians and researchers.
 
-This repository expands [DAGitty's](https://dagitty.net) core functionality to integrate into the broader **Clinical Inquiry Network** ecosystem, supporting advanced clinical reasoning, causal modeling, and evidence-based practice in physical therapy.
+This repository expands [DAGitty's](https://dagitty.net) core functionality to integrate into the broader **Clinical Inquiry Network** ecosystem, supporting advanced clinical reasoning, causal modeling, and evidence-informed practice in physical therapy based on a critical realist approach to clinical inquiry.
 
 ---
 
 ## **About Models4PT**
 
-Models4PT is a dynamic tool for creating and analyzing graphical causal models tailored to the needs of physical therapy clinicians and researchers. It integrates into the Clinical Inquiry Network, which seeks to enhance clinical reasoning, causal modeling, and evidence-based practice in physical therapy. This initiative includes:
+Models4PT will be (is) a dynamic tool for creating and analyzing graphical causal models tailored to the needs of physical therapy clinicians and researchers. It integrates into the Clinical Inquiry Network, which seeks to enhance clinical reasoning, causal modeling, and evidence-informed practice in physical therapy. This initiative includes:
 
 1. **Stats4PT**:  
    A statistical education and guidance platform for physical therapy.  
@@ -31,7 +31,7 @@ Models4PT is a dynamic tool for creating and analyzing graphical causal models t
 
 ### **Integration of Bhaskar’s Critical Realist Framework**
 - Explicit modeling of the **empirical, actual, and real domains** in causal modeling.
-- Support for latent variables and deeper structural analysis.
+- Support for latent variables and deeper structural analysis (including hierarchical models - see below).
 
 ### **Expanded Inference Methodologies**
 To support comprehensive clinical reasoning, Models4PT will integrate options for probabilistic causal inference models, including:
@@ -53,7 +53,7 @@ To support comprehensive clinical reasoning, Models4PT will integrate options fo
    - Automate suggestions for evidence-based adjustments to causal models.
 3. Integration into broader clinical reasoning education and consulting services.
 
-### Hierarchical Model Support (Planned)
+### Hierarchical Model Support
 
 Models4PT is preparing to support hierarchical causal models. This functionality will allow nodes to reference submodels, enabling multilevel causal reasoning and integration of critical realist perspectives.
 
@@ -91,10 +91,10 @@ For more information on DAGitty, visit:
 
 ## **Contact**
 
-For questions about this fork or collaboration opportunities, please contact:
+For questions about this project or collaboration opportunities, please contact:
 - **Sean Collins, PT, ScD**  
   [Peripatetic PT](https://peripateticpt.substack.com/)  
   [Stats4PT](https://peripateticpt.substack.com/p/welcome-to-stats4pt)  
   [Clinical Inquiry Fellowship](https://peripateticpt.substack.com/p/clinical-inquiry-fellowship)  
 
-  Updated as of January 13, 2025
+  Updated as of January 21, 2025
