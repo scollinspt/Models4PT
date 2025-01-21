@@ -1,3 +1,5 @@
+* 40cae57 - Update README.md (Sean Collins, 2025-01-21)
+* be8b046 - Update changelog (github-actions[bot], 2025-01-21)
 * de2641e - Refactored instances of dagitty to models4pt in gui/dagitty.js file and dependencies (Sean Collins, 2025-01-21)
 * fb463d9 - Update changelog (github-actions[bot], 2025-01-21)
 * 1bef533 - Created Models4PTController in dagitty.js and GraphGUI_Controller.js (Sean Collins, 2025-01-21)
