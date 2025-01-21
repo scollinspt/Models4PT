@@ -2,7 +2,7 @@
 % Please edit documentation in R/conversions.R
 \name{lavaanToGraph}
 \alias{lavaanToGraph}
-\title{Convert Lavaan Model to DAGitty Graph}
+\title{Convert Lavaan Model to Models4PT Graph}
 \usage{
 lavaanToGraph(x, digits = 3, ...)
 }

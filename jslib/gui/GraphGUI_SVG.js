@@ -32,10 +32,10 @@ var GraphGUI_SVG = Class.extend({
 		return this.style
 	},
 	setStyle : function( stylename ){
-		if( DAGitty.stylesheets[stylename] ){
-			this.style = DAGitty.stylesheets[stylename]
+		if( Models4PT.stylesheets[stylename] ){
+			this.style = Models4PT.stylesheets[stylename]
 		} else {
-			this.style = DAGitty.stylesheets["default"]
+			this.style = Models4PT.stylesheets["default"]
 		}
 	},
 	clear : function(){
@@ -134,10 +134,10 @@ var GraphGUI_SVG = Class.extend({
 			this.unsetLastHoveredElement, this ) )
 	},
 	anchorEdgeShape : function( el ){
-		var anchorback = DAGitty.Math.svgEdgeAnchor( el, 0, el.directed )
+		var anchorback = Models4PT.Math.svgEdgeAnchor( el, 0, el.directed )
 		el.x1 = anchorback[0]; el.y1 = anchorback[1]
 		
-		var anchorfront = DAGitty.Math.svgEdgeAnchor( el, 1., el.directed )
+		var anchorfront = Models4PT.Math.svgEdgeAnchor( el, 1., el.directed )
 		el.x2 = anchorfront[0]; el.y2 = anchorfront[1]
 		
 		if( el.cx ){

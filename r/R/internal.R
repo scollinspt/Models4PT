@@ -148,7 +148,7 @@
 
 .jsgetgraph <- function( xv ){
 	r <- .jsget(paste0("DAGitty.GraphSerializer.toDot(global.",xv,")"))
-	structure(r,class="dagitty")
+	structure(r,class="models4pt")
 }
 
 .jsglobals <-function (){
@@ -275,7 +275,7 @@
 	}, 
 	error=function(e) stop(e),
 	finally={.deleteJSVar(xv)})
-	structure(r,class="dagitty")
+	structure(r,class="models4pt")
 }
 
 .checkName <- function(x, v) {

@@ -97,10 +97,10 @@ getExample <- function( x ){
 	xv <- .getJSVar()
 	tryCatch({
 		.jsassign( xv, x )
-		r <- ct$eval( paste0("DagittyR.findExample(global.",xv,")") )
+		r <- ct$eval( paste0("Models4PTR.findExample(global.",xv,")") )
 	}, finally={.deleteJSVar(xv)})
 	if( r != "undefined" ){
-		structure(r,class="dagitty")
+		structure(r,class="models4pt")
 	} else {
 		stop("Example ",x," could not be found!")
 	}
@@ -602,7 +602,7 @@ setVariableStatus <- function( x, status, value ) {
 		.deleteJSVar(vv)
 		.deleteJSVar(xv)
 	})
-	structure(r,class="dagitty")
+	structure(r,class="models4pt")
 }
 
 #' Names of Variables in Graph
@@ -730,7 +730,7 @@ coordinates <- function( x ){
 	}, 
 	error=function(e) stop(e),
 	finally={.deleteJSVar(xv);.deleteJSVar(xv2)})
-	structure(r,class="dagitty")
+	structure(r,class="models4pt")
 }
 
 #' Canonicalize an Ancestral Graph
@@ -753,21 +753,21 @@ coordinates <- function( x ){
 #' canonicalize("mag{x<->y--z}") # introduces two new variables
 #' @export
 canonicalize <- function( x ){
-	x <- as.dagitty(x)
+	x <- as.models4pt(x)
 	.supportsTypes(x,c("dag","mag"))
 	xv <- .getJSVar()
 	xv2 <- .getJSVar()
 	r <- NULL
 	tryCatch({
 		.jsassigngraph( xv, x )
-		.jsassign( xv, .jsp("DAGitty.GraphTransformer.canonicalDag(global.",xv,")") )
+		.jsassign( xv, .jsp("Models4PT.GraphTransformer.canonicalDag(global.",xv,")") )
 		.jsassign( xv2, .jsp("global.",xv,".g.toString()") )
 		g <- .jsget( xv2 )
-		.jsassign( xv2, .jsp("DagittyR.pluck(",xv,".L,'id')") )
+		.jsassign( xv2, .jsp("Models4PTR.pluck(",xv,".L,'id')") )
 		L <- .jsget( xv2 )
-		.jsassign( xv2, .jsp("DagittyR.pluck(",xv,".S,'id')") )
+		.jsassign( xv2, .jsp("Models4PTR.pluck(",xv,".S,'id')") )
 		S <- .jsget( xv2 )	
-		r <- list( g=structure(g,class="dagitty"), L=L, S=S )
+		r <- list( g=structure(g,class="models4pt"), L=L, S=S )
 	}, 
 	error=function(e) stop(e),
 	finally={.deleteJSVar(xv);.deleteJSVar(xv2)})
@@ -843,18 +843,18 @@ is.dagitty <- function(x) inherits(x,"dagitty")
 #'
 #' @export
 graphLayout <- function( x, method="spring" ){
-	x <- as.dagitty( x )
+	x <- as.models4pt( x )
 	if( !(method %in% c("spring")) ){
 		stop("Layout method ",method," not supported!")
 	}
 	xv <- .getJSVar()
 	tryCatch({
 		.jsassigngraph( xv, x )
-		.jseval( paste0("(new DAGitty.GraphLayouter.Spring(global.",xv,")).layout()") )
+		.jseval( paste0("(new Models4PT.GraphLayouter.Spring(global.",xv,")).layout()") )
 		.jsassign( xv, .jsp("global.",xv,".toString()") )
 		r <- .jsget(xv)
 	}, finally={.deleteJSVar(xv)})
-	structure( r, class="dagitty" )
+	structure( r, class="models4pt" )
 }
 
 #' Plot Graph
@@ -1616,19 +1616,19 @@ vanishingTetrads <- function( x, type=NA ){
 #' # A PAG
 #' g <- dagitty("pag{ x @-@ y @-@ z }")  
 #' @export
-dagitty <- function(x, layout=FALSE){
+models4pt <- function(x, layout=FALSE){
 	if(!is.character(x)){
-		stop("Expecting a string to build dagitty graph!")
+		stop("Expecting a string to build models4pt graph!")
 	}
 	xv <- .getJSVar()
 	tryCatch({
 		.jsassign( xv, as.character(x) )
-		.jsassign( xv, .jsp("DAGitty.GraphParser.parseGuess(global.",xv,").toString()") )
-		r <- structure( .jsget(xv), class="dagitty" )
+		.jsassign( xv, .jsp("Models4PT.GraphParser.parseGuess(global.",xv,").toString()") )
+		r <- structure( .jsget(xv), class="models4pt" )
 	}, error=function(e){
 		stop( e )
 	},finally={.deleteJSVar(xv)})
-	r <- structure( r, class="dagitty" )
+	r <- structure( r, class="models4pt" )
 	if( layout ){
 		r <- graphLayout(r)
 	}

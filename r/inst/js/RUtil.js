@@ -4,7 +4,7 @@
 /* globals _, examples, GraphParser  */
 /* exported DagittyR */
 
-var DagittyR = {
+var Models4PTR = {
 	"pluck" : function(arr, key){
 		if( Array.isArray( arr ) ){
 			return arr.map(obj => obj[key])
@@ -52,7 +52,7 @@ var DagittyR = {
 	},
 
 	canonicalAdjustment : function( g ){
-		return this.adj2r( DAGitty.GraphAnalyzer.canonicalAdjustmentSet( g ) )
+		return this.adj2r( Models4PT.GraphAnalyzer.canonicalAdjustmentSet( g ) )
 	},
 	
 	edgeAttributes2r : function( g, a ){
@@ -62,7 +62,7 @@ var DagittyR = {
 			r.v.push( e.v1.id )
 			r.w.push( e.v2.id )
 			r.a.push( e.attributes ? e.attributes[a] : null )
-			r.e.push( DAGitty.Graph.Edgetype.Symbol[e.directed] )
+			r.e.push( Models4PT.Graph.Edgetype.Symbol[e.directed] )
 		} )
 		return r
 	},
@@ -85,7 +85,7 @@ var DagittyR = {
 			r.w.push( e.v2.id )
 			r.x.push( e.layout_pos_x )
 			r.y.push( e.layout_pos_y )
-			r.e.push( DAGitty.Graph.Edgetype.Symbol[e.directed] )
+			r.e.push( Models4PT.Graph.Edgetype.Symbol[e.directed] )
 		} )
 		return r
 	},
@@ -94,8 +94,8 @@ var DagittyR = {
 		var AnZ = g.ancestorsOf( g.getVertex( Z ) )
 		var i = 0, r = { paths : [], open : [] }
 		for( ; i < ga.length ; i ++ ){
-			r.paths.push( DAGitty.GraphSerializer.pathToDot( ga[i] ) )
-			r.open.push( DAGitty.GraphAnalyzer.dConnected( ga[i], 
+			r.paths.push( Models4PT.GraphSerializer.pathToDot( ga[i] ) )
+			r.open.push( Models4PT.GraphAnalyzer.dConnected( ga[i], 
 				ga[i].getSources(), ga[i].getTargets(), 
 				ga[i].getVertex( Z ), AnZ )
 			)
@@ -115,7 +115,7 @@ var DagittyR = {
 	},
 	
 	dconnected : function( g, X, Y, Z ){
-		var r = DAGitty.GraphAnalyzer.dConnected( g, 
+		var r = Models4PT.GraphAnalyzer.dConnected( g, 
 			g.getVertex(X), 
 			g.getVertex(Y), 
 			g.getVertex(Z) )
@@ -137,9 +137,9 @@ var DagittyR = {
 		for( let i = 0 ; i < examples.length ; i++ ){
 			if( examples[i].l.toLowerCase().indexOf(s.toLowerCase()) >= 0 ){
 				if( examples[i].d ){
-					return DAGitty.GraphParser.parseGuess(examples[i].d).toString()
+					return Models4PT.GraphParser.parseGuess(examples[i].d).toString()
 				} else {
-					return DAGitty.GraphParser.parseGuess(examples[i].e,examples[i].v).toString()
+					return Models4PT.GraphParser.parseGuess(examples[i].e,examples[i].v).toString()
 				}
 			}
 		}

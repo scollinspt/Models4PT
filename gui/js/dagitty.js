@@ -8649,7 +8649,7 @@ var Models4PTController = Class.extend({
 	}
 })
 
-var DAGitty = {
+var Models4PT = {
 	makeController : function( el, op ){
 		for( var k of Object.keys( el.dataset ) ){
 			if( !op.hasOwnProperty( k ) ){
@@ -8684,7 +8684,8 @@ var DAGitty = {
 			var tags = op.tags || ["div", "pre"]
 			for( var j = 0 ; j < tags.length ; j ++ ){
 				var divs = document.getElementsByTagName( tags[j] )
-				var re = new RegExp("\\bdagitty\\b")
+				// var re = new RegExp("\\bdagitty\\b")
+				var re = new RegExp("\\bmodels4pt\\b")
 				for( var i = 0 ; i < divs.length ; i ++ ){
 					el = divs.item(i)
 					if( re.test(el.className) ){
@@ -8702,8 +8703,8 @@ var DAGitty = {
 		return this.controllers_by_id[id]
 	},
 	resize : function(){
-		for( var i = 0 ; i < DAGitty.controllers.length ; i ++ ){
-			DAGitty.controllers[i].getView().resize()
+		for( var i = 0 ; i < Models4PT.controllers.length ; i ++ ){
+			Models4PT.controllers[i].getView().resize()
 		}
 	},
 	Math : {
@@ -8796,7 +8797,7 @@ var DAGitty = {
 }
 
 
-/* globals DAGitty,Class,_ */
+/* globals Models4PT,Class,_ */
 /* exported GraphGUI_SVG */
 
 var svgns = "http://www.w3.org/2000/svg"
@@ -8829,10 +8830,10 @@ var GraphGUI_SVG = Class.extend({
 		return this.style
 	},
 	setStyle : function( stylename ){
-		if( DAGitty.stylesheets[stylename] ){
-			this.style = DAGitty.stylesheets[stylename]
+		if( Models4PT.stylesheets[stylename] ){
+			this.style = Models4PT.stylesheets[stylename]
 		} else {
-			this.style = DAGitty.stylesheets["default"]
+			this.style = Models4PT.stylesheets["default"]
 		}
 	},
 	clear : function(){
@@ -8931,10 +8932,10 @@ var GraphGUI_SVG = Class.extend({
 			this.unsetLastHoveredElement, this ) )
 	},
 	anchorEdgeShape : function( el ){
-		var anchorback = DAGitty.Math.svgEdgeAnchor( el, 0, el.directed )
+		var anchorback = Models4PT.Math.svgEdgeAnchor( el, 0, el.directed )
 		el.x1 = anchorback[0]; el.y1 = anchorback[1]
 		
-		var anchorfront = DAGitty.Math.svgEdgeAnchor( el, 1., el.directed )
+		var anchorfront = Models4PT.Math.svgEdgeAnchor( el, 1., el.directed )
 		el.x2 = anchorfront[0]; el.y2 = anchorfront[1]
 		
 		if( el.cx ){

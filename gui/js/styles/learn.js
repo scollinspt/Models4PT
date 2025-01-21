@@ -26,6 +26,6 @@ var Decoration = {
 		{ 'class' : "arrowback", 'd': "M-1.5,0L5,5M-1.5,0L5,-5" }
 	]
 }
-DAGitty.stylesheets.semlikePlain = { style : Base, decoration : Decoration };
-DAGitty.stylesheets.default = DAGitty.stylesheets.semlikePlain
+Models4PT.stylesheets.semlikePlain = { style : Base, decoration : Decoration };
+Models4PT.stylesheets.default = Models4PT.stylesheets.semlikePlain
 })();

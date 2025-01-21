@@ -1,6 +1,6 @@
-#' Convert from DAGitty object to other graph types
+#' Convert from Models4PT object to other graph types
 #'
-#' Converts its argument from a DAGitty object (or character string describing it)
+#' Converts its argument from a Models4PT object (or character string describing it)
 #' to another package's format, if possible.
 #'
 #' @param x a \code{dagitty} object or a character string.
@@ -95,9 +95,9 @@ toString.dagitty <- function( x, format="dagitty", ... ){
 		xv <- .getJSVar()
 		tryCatch({
 			.jsassign( xv, as.character(x) )
-			.jsassign( xv, .jsp("DAGitty.GraphSerializer.to",
+			.jsassign( xv, .jsp("Models4PT.GraphSerializer.to",
 				toupper(substring(format, 1,1)), substring(format, 2),
-				"(DAGitty.GraphParser.parseGuess(global.",xv,"))") )
+				"(Models4PT.GraphParser.parseGuess(global.",xv,"))") )
 			r <- as.character( .jsget(xv) )
 		}, error=function(e){
 			stop( e )
@@ -107,7 +107,7 @@ toString.dagitty <- function( x, format="dagitty", ... ){
 }
 
 
-#' Convert Lavaan Model to DAGitty Graph
+#' Convert Lavaan Model to Models4PT Graph
 #'
 #' The \code{lavaan} package is a popular package for structural equation 
 #' modeling. To provide interoperability with lavaan, this function 
@@ -176,9 +176,9 @@ lavaanToGraph <- function( x, digits=3, ... ){
 
 
 
-#' Convert to DAGitty object
+#' Convert to Models4PT object
 #'
-#' Converts its argument to a DAGitty object, if possible.
+#' Converts its argument to a Models4PT object, if possible.
 #'
 #' @param x an object.
 #' @param ... further arguments passed on to methods.
@@ -229,7 +229,7 @@ c.dagitty <- function( ... ){
 		for( i in seq_along(args) ){ 
 			.jsassigngraph( xvs[[i]], as.dagitty( args[[i]] ) )
 		}
-		.jsassign( rv, .jsp("DAGitty.GraphTransformer.mergeGraphs(",
+		.jsassign( rv, .jsp("Models4PT.GraphTransformer.mergeGraphs(",
 			paste(xvs,collapse=","),").toString()") )
 		r <- .jsget( rv )
 	},finally={

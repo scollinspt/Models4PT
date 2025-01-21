@@ -26,7 +26,7 @@ var GUI = {
 	highlight_puredirect : false,
 	allow_intermediate_adjustment : true,
 	activate_path_style : function( s, b ){
-		var sty = DAGitty.stylesheets.default.style
+		var sty = Models4PT.stylesheets.default.style
 		if( b ) {
 			if(sty[s+"path_inactive"] ){
 				sty[s+"path"] = sty[s+"path_inactive"];
@@ -38,10 +38,10 @@ var GUI = {
 			delete sty[s+"path"];
 			displayHide("legend_"+s);
 		}
-		DAGittyControl && DAGittyControl.redraw();
+		Models4PTControl && Models4PTControl.redraw();
 	},
 	activate_node_style : function( s, b ){
-		var sty = DAGitty.stylesheets.default.style
+		var sty = Models4PT.stylesheets.default.style
 		if( b ) {
 			if(sty[s+"node_inactive"] ){
 				sty[s+"node"] = sty[s+"node_inactive"];
@@ -67,15 +67,15 @@ var GUI = {
 			this.activate_node_style( n, b );
 		},this);
 		b ? displayShow("legend_ancestors") : displayHide("legend_ancestors");
-		DAGittyControl && DAGittyControl.redraw();
+		Models4PTControl && Models4PTControl.redraw();
 	},
 	set_view_mode : function( vm ){
 		let vmel = document.getElementById( "dagview_"+vm )
 		vmel.checked ||= true
-		DAGittyControl && DAGittyControl.setViewMode( vm );
+		Models4PTControl && Models4PTControl.setViewMode( vm );
 	},
 	set_bias_mode : function( bm ){
-		DAGittyControl && DAGittyControl.setBiasMode( bm );		
+		Models4PTControl && Models4PTControl.setBiasMode( bm );		
 	},
 	refresh_variable_status : function(){
 		var vid = document.getElementById("variable_id").value
@@ -89,14 +89,14 @@ var GUI = {
 	set_variable_status : function( n, stat ){
 		var vid = document.getElementById("variable_id").value
 		if( stat ){
-			DAGittyControl && DAGittyControl.setVertexProperty( vid, n )
+			Models4PTControl && Models4PTControl.setVertexProperty( vid, n )
 		} else {
-			DAGittyControl && DAGittyControl.unsetVertexProperty( vid, n )
+			Models4PTControl && Models4PTControl.unsetVertexProperty( vid, n )
 		}
 	},
 	set_style : function( s ){
-		DAGitty.stylesheets.default = DAGitty.stylesheets[s]
-		var sty = DAGitty.stylesheets.default.style
+		Models4PT.stylesheets.default = Models4PT.stylesheets[s]
+		var sty = Models4PT.stylesheets.default.style
 		document.getElementById("highlight_ancestral").checked = typeof(sty["confoundernode_inactive"]) === "undefined";
 		document.getElementById("highlight_ancestral").checked ? displayShow("legend_ancestors") : displayHide("legend_ancestors");
 		
@@ -111,7 +111,7 @@ var GUI = {
 			"outcome","rnode","adjustednode"],function(n){
 			document.getElementById("li"+n).src="images/legend/"+s+"/"+n+".png"
 		},this);
-		DAGittyControl.setStyle( s )
+		Models4PTControl.setStyle( s )
 	}
 };
 
@@ -183,7 +183,7 @@ function nl2br (str, is_xhtml) {
 }
 
 function msg( t ){
-	DAGittyControl.getView().openAlertDialog( t );
+	Models4PTControl.getView().openAlertDialog( t );
 }
 
 function how( t ){
@@ -608,7 +608,7 @@ function displayImplicationInfo( full ){
 }
 
 function exportTikzCode(){
-	DAGittyControl.getView().openHTMLDialog( 
+	Models4PTControl.getView().openHTMLDialog( 
 		"<textarea style=\"width:80%\" rows=\"10\">"+
 		"% This code uses the tikz package\n"+
 		"\\begin{tikzpicture}\n"+
@@ -653,7 +653,7 @@ function loadDAGFromTextData(){
 		var layouter = new GraphLayouter.Spring( Model.dag );
 		layouter.layout();
 	}
-	DAGittyControl.setGraph( Model.dag  );
+	Models4PTControl.setGraph( Model.dag  );
 	displayHide("model_refresh");
 	document.getElementById("adj_matrix").style.backgroundColor="#fff";
 }
@@ -662,7 +662,7 @@ function generateSpringLayout(){
 	var layouter = new GraphLayouter.Spring( Model.dag );
 	_.each(Model.dag.edges,function(e){delete e["layout_pos_x"];delete e["layout_pos_y"]})
 	layouter.layout();
-	DAGittyControl.setGraph( Model.dag ); // trigges to refresh the rendering
+	Models4PTControl.setGraph( Model.dag ); // trigges to refresh the rendering
 };
 
 function loadExample( nr ){
@@ -684,7 +684,7 @@ function newModel2(ename){
 	if( ename === null ){ return false; }
 	ename = (""+ename).trim()
 	if( ename == "" ){ return false; }
-	DAGittyControl.getView().openPromptDialog(
+	Models4PTControl.getView().openPromptDialog(
 		"Please enter name of outcome variable","",function(s){ 
 			newModel3(ename,s) } )
 	return true;
@@ -695,7 +695,7 @@ function newModel3(ename,oname){
 	if( oname == "" || ename == oname ){ return false; }
 	document.getElementById("adj_matrix").value = ename+" E @0,0\n"+oname+" O @1,1\n\n"+ename+" "+oname
 	loadDAGFromTextData()
-	DAGittyControl.getView().closeDialog()
+	Models4PTControl.getView().closeDialog()
 }
 
 function supportsSVG() {
@@ -799,9 +799,9 @@ function hostName(){
 function networkFailMsg(){
 	msg(
 	 "A network error occurred when trying to perform this function. "+
-	 "If you are using a downloaded DAGitty version, this is likely "+
+	 "If you are using a downloaded Models4PT version, this is likely "+
 	 "due to Browser security settings. Try again using the online "+
-	 "version of DAGitty." )
+	 "version of Models4PT." )
 }
 
 function getModelIdFromURL( url ){
@@ -820,31 +820,7 @@ function saveOnlineForm(){
 	}
 }
 
-/* 
-The original loadOnline function fetched a model from dagitty.net using an API call.
-This version has been commented out as we are transitioning to using localStorage
-for saving and loading models. When we implement a backend in the future, we may revisit
-or adapt this function to integrate with our own backend.
 
-	async function loadOnline( url ){
-	var graphid = getModelIdFromURL( url )
-	try{
-	   	const response = await fetch( "https://dagitty.net/db/id/"+graphid )
-		if( response.ok ){
-			const modelsyntax = await response.json()
-			DAGittyControl.getView().closeDialog()
-			document.getElementById("adj_matrix").value = modelsyntax.g
-			Model.uniqid = modelsyntax.g.id
-			loadDAGFromTextData()
-		} else {
-       	 		networkFailMsg(); return
-		}
-	} catch( err ){
-		networkFailMsg(); 
-		console.log( err );
-		return
-	}
-} */
 
 // New localStorage-based version	
 async function loadOnline(url) {
@@ -861,7 +837,7 @@ async function loadOnline(url) {
 		const modelsyntax = JSON.parse(modelData);
 	
 		// Update the UI and render the DAG
-		DAGittyControl.getView().closeDialog();
+		Models4PTControl.getView().closeDialog();
 		document.getElementById("adj_matrix").value = modelsyntax.g;
 		Model.uniqid = graphid; // Optional: track the graph ID
 		loadDAGFromTextData(); // Render the graph
@@ -874,7 +850,7 @@ async function loadOnline(url) {
 // Updated loadOnlineForm function for localStorage:
 // This version prompts the user for a Graph ID instead of a URL and loads the model from localStorage.
 function loadOnlineForm() {
-    DAGittyControl.getView().openPromptDialog(
+    Models4PTControl.getView().openPromptDialog(
         "Enter the Graph ID",
         "exampleGraph123", // Example placeholder
         function (graphID) {
@@ -888,16 +864,7 @@ function loadOnlineForm() {
 }
 
 
-/* 
-The original loadOnlineForm function opened a prompt dialog for the user to enter a URL.
-This functionality relied on models stored remotely on dagitty.net.
-As we transition to localStorage, this version has been replaced with one that prompts for a Graph ID instead of a URL.
 
-Original code:
-	function loadOnlineForm(){
-	DAGittyControl.getView().openPromptDialog(
-		"Enter the URL","dagitty.net/mOWOV4V",loadOnline)
-} */
 
 		// ----------------------------
 // Save and Load Functionality

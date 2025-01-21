@@ -40,7 +40,7 @@ var Decoration = {
 	]
 }
 
-DAGitty.stylesheets.semlike = { style : Base, decoration : Decoration };
-DAGitty.stylesheets.default = DAGitty.stylesheets.semlike
+Models4PT.stylesheets.semlike = { style : Base, decoration : Decoration };
+Models4PT.stylesheets.default = Models4PT.stylesheets.semlike
 
 })();

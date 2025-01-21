@@ -57,13 +57,13 @@
         dag_model_text_data : null
     };
 
-    var DAGittyControl;
+    var Models4PTControl;
 
     function initialize(){
 
 
-        DAGitty.setup({autofocus:true});
-        DAGittyControl = DAGitty.controllers[0];
+      Models4PT.setup({autofocus:true});
+      Models4PTControl = Models4PT.controllers[0];
         
         GUI.menus = ["model","examples","howto","layout","help"]
         _.each(GUI.menus,function(t){
@@ -71,7 +71,7 @@
                 function(){menuToggle(t)} );
         });
         
-        DAGittyControl.observe( 'graphchange',
+        Models4PTControl.observe( 'graphchange',
             function(g){
                 Model.dag = g;
                 document.getElementById("adj_matrix").value = g.toString();
@@ -86,13 +86,13 @@
             }
         );
         
-        DAGittyControl.observe( 'graphlayoutchange',
+        Models4PTControl.observe( 'graphlayoutchange',
             function(g){
                 document.getElementById("adj_matrix").value = g.toString();
             }
         );
 
-        DAGittyControl.observe( 'vertex_marked',
+        Models4PTControl.observe( 'vertex_marked',
             function( v ){
                 if( v ){
                     displayShow( 'variable' )
@@ -120,13 +120,13 @@
             // load user-supplied model
             loadOnline( "dagitty.net/m"+getid );
         } else {
-            DAGittyControl.graphChanged();
+         Models4PTControl.graphChanged();
         }
 
         document.onkeydown = function(e){
             if( e.keyCode == 27 ){
-                DAGittyControl.getView().getImplementation().stopMousemove()
-                DAGittyControl.getView().closeDialog()
+               Models4PTControl.getView().getImplementation().stopMousemove()
+               Models4PTControl.getView().closeDialog()
             }
         }
     }
@@ -211,7 +211,7 @@
       <li style="float:none; overflow: hidden; border-right: none;"> &nbsp;</li>
    </ul>
 
-   <div id="canvas" class="dagitty" data-mutable="true">
+   <div id="canvas" class="models4pt" data-mutable="true">
 A [selected,pos="-2.200,-1.520"]
 B [pos="1.400,-1.460"]
 D [outcome,pos="1.400,1.621"]
@@ -257,8 +257,8 @@ E -&gt; D
     <input type="hidden" id="variable_id" value="">
 
     <p>
-        <button type="button" onclick="DAGittyControl.deleteVertex(document.getElementById('variable_id').value)">delete</button>
-        <button type="button" onclick="DAGittyControl.getView().renameVertexDialog(document.getElementById('variable_id').value)">rename</button>
+        <button type="button" onclick="Models4PTControl.deleteVertex(document.getElementById('variable_id').value)">delete</button>
+        <button type="button" onclick="Models4PTControl.getView().renameVertexDialog(document.getElementById('variable_id').value)">rename</button>
     </p>
 
       </form>

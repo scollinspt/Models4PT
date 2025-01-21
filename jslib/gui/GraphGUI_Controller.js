@@ -276,7 +276,7 @@ var Models4PTController = Class.extend({
 	}
 })
 
-var DAGitty = {
+var Models4PT = {
 	makeController : function( el, op ){
 		for( var k of Object.keys( el.dataset ) ){
 			if( !op.hasOwnProperty( k ) ){
@@ -329,8 +329,8 @@ var DAGitty = {
 		return this.controllers_by_id[id]
 	},
 	resize : function(){
-		for( var i = 0 ; i < DAGitty.controllers.length ; i ++ ){
-			DAGitty.controllers[i].getView().resize()
+		for( var i = 0 ; i < Models4PT.controllers.length ; i ++ ){
+			Models4PT.controllers[i].getView().resize()
 		}
 	},
 	Math : {

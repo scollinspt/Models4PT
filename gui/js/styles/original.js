@@ -1,5 +1,5 @@
 (function(){ 
-DAGitty.stylesheets.original = {
+	Models4PT.stylesheets.original = {
 			style : {
 				node : {
 					'd' : 'M 0 0 m 20, 0 a 20,15 0 1,1 -40,0 a 20,15 0 1,1 40,0',
@@ -31,5 +31,5 @@ DAGitty.stylesheets.original = {
 				]
 			}
 	};
-	DAGitty.stylesheets.default = DAGitty.stylesheets.original
+	Models4PT.stylesheets.default = Models4PT.stylesheets.original
 })();

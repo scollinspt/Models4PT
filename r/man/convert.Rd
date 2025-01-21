@@ -2,7 +2,7 @@
 % Please edit documentation in R/conversions.R
 \name{convert}
 \alias{convert}
-\title{Convert from DAGitty object to other graph types}
+\title{Convert from Models4PT object to other graph types}
 \usage{
 convert(x, to, ...)
 }
@@ -14,6 +14,6 @@ convert(x, to, ...)
 \item{...}{further arguments passed on to methods (currently unused)}
 }
 \description{
-Converts its argument from a DAGitty object (or character string describing it)
+Converts its argument from a Models4PT object (or character string describing it)
 to another package's format, if possible.
 }

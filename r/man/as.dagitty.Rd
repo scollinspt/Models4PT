@@ -2,7 +2,7 @@
 % Please edit documentation in R/conversions.R
 \name{as.dagitty}
 \alias{as.dagitty}
-\title{Convert to DAGitty object}
+\title{Convert to Models4PT object}
 \usage{
 as.dagitty(x, ...)
 }
@@ -12,5 +12,5 @@ as.dagitty(x, ...)
 \item{...}{further arguments passed on to methods.}
 }
 \description{
-Converts its argument to a DAGitty object, if possible.
+Converts its argument to a Models4PT object, if possible.
 }

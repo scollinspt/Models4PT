@@ -2,7 +2,7 @@
 % Please edit documentation in R/dagitty.R
 \name{dagitty}
 \alias{dagitty}
-\title{Parse DAGitty Graph}
+\title{Parse Models4PT Graph}
 \usage{
 dagitty(x, layout = FALSE)
 }
@@ -16,14 +16,14 @@ variable (see \code{\link{graphLayout}})}
 Constructs a \code{dagitty} graph object from a textual description.
 }
 \details{
-The textual syntax for DAGitty graph is based on the dot language of the 
+The textual syntax for Models4PT graph is based on the dot language of the 
 graphviz software (\url{https://graphviz.gitlab.io/_pages/doc/info/lang.html}). This is a
 fairly intuitive syntax -- use the examples below and in the other functions to
-get you started. An important difference to graphviz is that the DAGitty language
+get you started. An important difference to graphviz is that the Models4PT language
 supports several types of graphs, which have different semantics. However, many users
 will mainly focus on DAGs.
 
-A DAGitty graph description has the following form:
+A Models4PT graph description has the following form:
 
 \code{[graph type] '{' [statements] '}'}
 
@@ -70,10 +70,10 @@ PAGs (partial ancestral graphs) are to MAGs what PDAGs are to DAGs: they represe
 equivalence classes of MAGs. MAGs can contain the following edges: \code{@-@}, 
 \code{->}, \code{@->}, \code{--}, \code{@--}
 (the @ symbols are written as circle marks in most of the literature). For
-details on PAGs, see Zhang et al (2008). For now, only a few DAGitty functions
+details on PAGs, see Zhang et al (2008). For now, only a few Models4PT functions
 support PAGs (for instance, \code{\link{adjustmentSets}}.
 
-The DAGitty parser does not perform semantic validation. That is, 
+The Models4PT parser does not perform semantic validation. That is, 
 it will not check whether a DAG is actually acyclic, or whether all chain components
 in a PAG are actually chordal. This is not done because it can be computationally
 rather expensive.

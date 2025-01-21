@@ -1,10 +1,10 @@
 /** This file contains some utility function that convert the results of important 
-	DAGitty functions into a format that is more easily mapped to an R list-of-lists. */
+	Models4PT functions into a format that is more easily mapped to an R list-of-lists. */
 
 /* globals _, examples, Graph, GraphAnalyzer, GraphParser, GraphSerializer  */
-/* exported DagittyR */
+/* exported Models4PTR */
 
-var DagittyR = {
+var Models4PTR = {
 	adj2r : function( ss ){
 		"use strict"
 		var r = {}, i=1
