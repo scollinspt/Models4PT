@@ -1,3 +1,5 @@
+* 1bef533 - Created Models4PTController in dagitty.js and GraphGUI_Controller.js (Sean Collins, 2025-01-21)
+* db4e496 - Update changelog (github-actions[bot], 2025-01-21)
 * 712c9e4 - Merge branch 'master' of https://github.com/scollinspt/Models4PT (Sean Collins, 2025-01-21)
 * baef0ac - Update generate-changelog.yml to include full commit history (Sean Collins, 2025-01-21)
 * 4491d57 - Update changelog (github-actions[bot], 2025-01-21)
