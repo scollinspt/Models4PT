@@ -74,22 +74,31 @@ if( typeof module !== 'undefined' && typeof module.exports !== 'undefined' ){
 	global.Class = module.exports.Class
 }
 
-/*  DAGitty - a browser-based software for causal modelling and analysis
- *  Copyright (C) 2010-2015 Johannes Textor, Benito van der Zander
+/* 
+ * Models4PT - A derivative of DAGitty for causal modeling in physical therapy.
+ * Based on DAGitty, a browser-based software for causal modeling and analysis.
+ *
+ * Original DAGitty Copyright (C) 2010-2015 Johannes Textor, Benito van der Zander
+ * Portions Copyright (C) 2010-2015 Johannes Textor
  * 
- *   This program is free software; you can redistribute it and/or
- *   modify it under the terms of the GNU General Public License
- *   as published by the Free Software Foundation; either version 2
- *   of the License, or (at your option) any later version.
+ * Models4PT Modifications Copyright (C) 2025 Sean Collins
  * 
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details.
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
  * 
- *   You should have received a copy of the GNU General Public License
- *   along with this program; if not, write to the Free Software
- *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. */
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+/* Code in this section is jointly authored by Johannes Textor and Benito van der Zander. */
 
 /* Simple Hash implementation. */
 
@@ -5311,22 +5320,7 @@ var GraphGenerator = {
 		} 
 	}
 }
-/* DAGitty - a browser-based software for causal modelling and analysis
-   Copyright (C) 2010-2012 Johannes Textor
-
-   This program is free software; you can redistribute it and/or
-   modify it under the terms of the GNU General Public License
-   as published by the Free Software Foundation; either version 2
-   of the License, or (at your option) any later version.
-
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. */
+/* Code in this section is authored solely by Johannes Textor. */
 
 /* This is just a wrapper around the basic Graph class which allows us to 
 	register event listeners, e.g. if the graph is being modified. This wrapper
@@ -7724,9 +7718,9 @@ MPoly.minusOne = MPoly("-1")
  *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. */
 
 /* globals Hash,GraphGUI_SVG,Graph,GraphTransformer,Class,_ */
-/* exported DAGittyGraphView */
+/* exported Models4PTGraphView */
 
-var DAGittyGraphView = Class.extend({
+var Models4PTGraphView = Class.extend({
 	init : function( el, graph, controller, obj ){
 		// el -> parent element to hook into
 		// graph -> graph object to use (model)
@@ -8378,7 +8372,7 @@ var DAGittyGraphView = Class.extend({
 	}
 })
 
-/* globals ObservedGraph,Class,_,Graph,DAGittyGraphView,GraphParser,GraphLayouter */
+/* globals ObservedGraph,Class,_,Graph,Models4PTGraphView,GraphParser,GraphLayouter */
 /* exported DAGittyController */
 
 var DAGittyController = Class.extend({
@@ -8405,7 +8399,7 @@ var DAGittyController = Class.extend({
 		}
 
 		// ... and creates the view ...
-		this.view = new DAGittyGraphView( obj.canvas,
+		this.view = new Models4PTGraphView( obj.canvas,
 			this.getGraph(),
 			this, { 
 				interactive : obj.interactive,

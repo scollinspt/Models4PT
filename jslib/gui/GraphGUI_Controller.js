@@ -1,5 +1,5 @@
 
-/* globals ObservedGraph,Class,_,Graph,DAGittyGraphView,GraphParser,GraphLayouter */
+/* globals ObservedGraph,Class,_,Graph,Models4PTGraphView,GraphParser,GraphLayouter */
 /* exported DAGittyController */
 
 var DAGittyController = Class.extend({
@@ -26,7 +26,7 @@ var DAGittyController = Class.extend({
 		}
 
 		// ... and creates the view ...
-		this.view = new DAGittyGraphView( obj.canvas,
+		this.view = new Models4PTGraphView( obj.canvas,
 			this.getGraph(),
 			this, { 
 				interactive : obj.interactive,

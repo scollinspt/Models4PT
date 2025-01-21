@@ -16,9 +16,9 @@
  *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. */
 
 /* globals Hash,GraphGUI_SVG,Graph,GraphTransformer,Class,_ */
-/* exported DAGittyGraphView */
+/* exported Models4PTGraphView */
 
-var DAGittyGraphView = Class.extend({
+var Models4PTGraphView = Class.extend({
 	init : function( el, graph, controller, obj ){
 		// el -> parent element to hook into
 		// graph -> graph object to use (model)

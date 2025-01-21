@@ -53,6 +53,19 @@ To support comprehensive clinical reasoning, Models4PT will integrate options fo
    - Automate suggestions for evidence-based adjustments to causal models.
 3. Integration into broader clinical reasoning education and consulting services.
 
+### Hierarchical Model Support (Planned)
+
+Models4PT is preparing to support hierarchical causal models. This functionality will allow nodes to reference submodels, enabling multilevel causal reasoning and integration of critical realist perspectives.
+
+**Key Objectives**:
+- Extend variable metadata to include submodel references.
+- Prepare the backend database for hierarchical relationships.
+- Ensure algorithms like adjustment set calculation and d-separation are hierarchy-ready.
+- Add placeholders in the interface for hierarchical metadata.
+
+**Future Goals**:
+This feature will support advanced use cases, including nested causal systems and multilevel analyses, while preserving compatibility with current core functionality.
+
 ---
 
 ## **Running the GUI Locally**
