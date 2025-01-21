@@ -24,18 +24,18 @@ dagitty-alg.js : $(GRAPH_FILES)
 dagitty-node.js : node-pre.js $(GRAPH_FILES) node-post.js
 	cat $^ > $@
 
-dagitty.js : underscore-min.js dagitty-alg.js $(GUI_FILES)
+models4pt.js : underscore-min.js dagitty-alg.js $(GUI_FILES)
 	cat $^ > $@
 
-dagitty-min.js : dagitty.js jsmin
-	./jsmin < dagitty.js > $@
+dagitty-min.js : models4pt.js jsmin
+	./jsmin < models4pt.js > $@
 
 install : dagitty-min.js
-	cp dagitty.js ../gui/js/dagitty.js ; cp dagitty-alg.js ../r/inst/js/
+	cp models4pt.js ../gui/js/models4pt.js ; cp dagitty-alg.js ../r/inst/js/
 	
 parser/GraphDotParser.js : force_look
 	cd parser ; make
 
 clean:
-	rm -f dagitty.js jsmin.exe jsmin dagitty-min.js
+	rm -f models4pt.js jsmin.exe jsmin dagitty-min.js
  
