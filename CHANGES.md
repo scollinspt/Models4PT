@@ -1,3 +1,5 @@
+* c250849 - completed gui directory refactoring process from dagitty to models4pt (Sean Collins, 2025-01-22)
+* 50503df - Update changelog (github-actions[bot], 2025-01-21)
 * 6b6d2b5 - Refactoring - renamed js/dagitty.js and dependencies (Sean Collins, 2025-01-21)
 * 5d6fe2e - Update changelog (github-actions[bot], 2025-01-21)
 * 40cae57 - Update README.md (Sean Collins, 2025-01-21)
