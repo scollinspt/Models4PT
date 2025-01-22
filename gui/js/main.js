@@ -741,7 +741,7 @@ function exportBitmap( format ){
 		document.body.appendChild( a );
     		a.style = 'display: none';
 	   	a.href = uri
-		a.download="dagitty-model."+format
+		a.download="models4pt-model."+format
 		a.click()
 		window.URL.revokeObjectURL( uri )
 		document.body.removeChild( a )
@@ -772,7 +772,7 @@ function exportSVG(){
 	const a = document.createElement( 'a' );
     	a.style = 'display: none';
 	a.href = url
-	a.download="dagitty-model.svg"
+	a.download="models4pt-model.svg"
 	document.body.appendChild( a );
 	a.click()
 	document.body.removeChild( a )
@@ -783,14 +783,14 @@ function exportSVG(){
 /*
 function hostName(){
 	switch( window.location.hostname ){
-		case "dagitty.net":
-			return "dagitty.net";
-		case "dagitty.concebo.eu":
-			return "dagitty.concebo.eu";
-		case "www.dagitty.net":
-			return "www.dagitty.net";
+		case "models4pt.net":
+			return "models4pt.net";
+		case "models4pt.concebo.eu":
+			return "models4pt.concebo.eu";
+		case "www.models4pt.com":
+			return "www.models4pt.com";
 	}
-	return "dagitty.net";
+	return "models4pt.com";
 }
 */
 
@@ -815,7 +815,7 @@ function saveOnlineForm(){
 		publishwindow.setModelCode( Model.dag.toString() )
 		publishwindow.focus()
 	} else {
-		publishwindow = window.open( "publish.html", "net_dagitty_publishwindow" )
+		publishwindow = window.open( "publish.html", "net_models4pt_publishwindow" )
 		publishwindow.onload = function(){ publishwindow.setModelCode( Model.dag.toString() ) }
 	}
 }

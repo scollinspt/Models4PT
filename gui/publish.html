@@ -32,7 +32,7 @@
         	function submitForm() {
             		const formData = new FormData(document.getElementById('dagform'))
 			fetch( 
-				"https://dagitty.net/db/store/",
+				"https://models4pt.com/db/store/",
 				{ method: "POST", body: formData }
 			)
 			.then( response => response.json() )
@@ -45,11 +45,11 @@
 			if( data["exists"] ){
 				document.getElementById("submission_field").innerHTML = `This diagram is already present
 				in the database. It is available at:
-				<a href="https://dagitty.net/m${data["id"]}">https://dagitty.net/m${data["id"]}</a>`			
+				<a href="https://models4pt.com/m${data["id"]}">https://models4pt.com/m${data["id"]}</a>`			
 			} else {
 				document.getElementById("submission_field").innerHTML = `Your diagram was saved and is 
 				now available at:
-				<a href="https://dagitty.net/m${data["id"]}">https://dagitty.net/m${data["id"]}</a>`
+				<a href="https://models4pt.com/m${data["id"]}">https://models4pt.com/m${data["id"]}</a>`
 			}
 		}
 
@@ -69,7 +69,7 @@
 	<h1>Publish your causal diagram</h1>
 
 	<p>
-		Using this form, you can publish your causal diagram on the dagitty website.
+		Using this form, you can publish your causal diagram on the models4pt website.
 		This will generate a shareable and permanent link to your model 
 		that you can include, for instance, in a paper or presentation. 	
 	</p>
@@ -89,7 +89,7 @@
 	</p>
 
 	
-	<form class="needs-validation" id="dagform" action="https://dagitty.net/db/store/" 
+	<form class="needs-validation" id="dagform" action="https://models4pt.com/db/store/" 
 		onsubmit="submitForm(); return false" method="post">
 
   <div class="mb-3">
@@ -133,7 +133,7 @@
 </div>
 
 	<p>
-		If you choose to provide your e-mail address, we will store it on the dagitty.net server for the sole
+		If you choose to provide your e-mail address, we will store it on the models4pt.com server for the sole
 		purpose of enabling you to update your published diagram. We will not use your e-mail address for other
 		purposes nor share it with anyone else. Your e-mail address will not be visible when users view the
 		published diagram. 
@@ -144,7 +144,7 @@
 		<input class="form-check-input" type="checkbox" name="email_agreement" 
 			value="ok" id="modelsaveform_email_agreement">
 		<label class="form-check-label" for="modelsaveform_email_agreement">
-			I agree to the storage of the supplied name and e-mail address on the dagitty.net server 
+			I agree to the storage of the supplied name and e-mail address on the models4pt.com server 
 			for the purpose of being able to update my published diagram. 
 		</label>
 		</div>
