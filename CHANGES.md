@@ -1,3 +1,5 @@
+* b8a04e9 - removal of the “SEM-like” style (Sean Collins, 2025-01-23)
+* 54b8c7c - Update changelog (github-actions[bot], 2025-01-22)
 * 05fbdb0 - Create CR_Variable_Plan.md (Sean Collins, 2025-01-22)
 * 8d1d65c - Update changelog (github-actions[bot], 2025-01-22)
 * c250849 - completed gui directory refactoring process from dagitty to models4pt (Sean Collins, 2025-01-22)
