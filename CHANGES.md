@@ -1,3 +1,5 @@
+* 2252c4c - Removed moral and correlation graph options from view mode (Sean Collins, 2025-01-23)
+* a877d05 - Update changelog (github-actions[bot], 2025-01-23)
 * e1716ac - Added "domain" to Graph class (Sean Collins, 2025-01-23)
 * a060d1a - Update changelog (github-actions[bot], 2025-01-23)
 * 49f620a - Updated style menu label from “classic” to “original” to align with the style name in the codebase (Sean Collins, 2025-01-23)
