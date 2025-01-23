@@ -1,3 +1,6 @@
+* ef671ff - Merge branch 'master' of https://github.com/scollinspt/Models4PT (Sean Collins, 2025-01-23)
+* 4af7e55 - updated index for launch page (Sean Collins, 2025-01-23)
+* 6fa82d7 - Update changelog (github-actions[bot], 2025-01-23)
 * 2252c4c - Removed moral and correlation graph options from view mode (Sean Collins, 2025-01-23)
 * a877d05 - Update changelog (github-actions[bot], 2025-01-23)
 * e1716ac - Added "domain" to Graph class (Sean Collins, 2025-01-23)
