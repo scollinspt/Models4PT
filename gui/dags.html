@@ -267,26 +267,41 @@ E -&gt; D
    </div>
    
   
-   <h3 onclick="displayToggle('viewmode')"><img src="images/arrow-down.png" alt="" id="a_view">
-        View mode</h3>
-   <div id="viewmode" style="display:block">
-
+   <h3 onclick="displayToggle('viewmode')">
+      <img src="images/arrow-down.png" alt="" id="a_view"> View mode
+  </h3>
+  <div id="viewmode" style="display:block">
+  
       <form autocomplete="off">
-      <p><input type="radio" checked="checked" id="dagview_normal" name="dagview"
-         onclick="GUI.set_view_mode(this.value)" value="normal" /> 
-            <label for="dagview_normal">normal</label></p>
-      <p><input type="radio" name="dagview" id="dagview_moral"
-         onclick="GUI.set_view_mode(this.value)" value="moral"/>
-            <label for="dagview_moral">moral graph</label></p>
-      <p><input type="radio" name="dagview" id="dagview_dependency"
-         onclick="GUI.set_view_mode(this.value)" value="dependency"/>
-            <label for="dagview_dependency">correlation graph</label></p>
-      <p><input type="radio" name="dagview" id="dagview_equivalence"
-         onclick="GUI.set_view_mode(this.value)" value="equivalence"/>
-            <label for="dagview_equivalence">equivalence class</label></p>
+          <p>
+              <input type="radio" checked="checked" id="dagview_normal" name="dagview"
+                  onclick="GUI.set_view_mode(this.value)" value="normal" /> 
+              <label for="dagview_normal">normal</label>
+          </p>
+          <!-- Commenting out Moral Graph -->
+          <!--
+          <p>
+              <input type="radio" name="dagview" id="dagview_moral"
+                  onclick="GUI.set_view_mode(this.value)" value="moral"/>
+              <label for="dagview_moral">moral graph</label>
+          </p>
+          -->
+          <!-- Commenting out Correlation Graph -->
+          <!--
+          <p>
+              <input type="radio" name="dagview" id="dagview_dependency"
+                  onclick="GUI.set_view_mode(this.value)" value="dependency"/>
+              <label for="dagview_dependency">correlation graph</label>
+          </p>
+          -->
+          <p>
+              <input type="radio" name="dagview" id="dagview_equivalence"
+                  onclick="GUI.set_view_mode(this.value)" value="equivalence"/>
+              <label for="dagview_equivalence">equivalence class</label>
+          </p>
       </form>
-
-   </div>
+  
+  </div>
    
    <h3 onclick="displayToggle('effects')"><img src="images/arrow-down.png" alt="" id="a_effects"> Effect analysis</h3>
    <div id="effects" style="display:block">
