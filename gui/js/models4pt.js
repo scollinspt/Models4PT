@@ -147,7 +147,7 @@ var Graph = Class.extend({
 	// additional getter and setter methods for these properties are mixed in below,
 	// see code after definition of this class 
 	managed_vertex_property_names : ["source","target","adjustedNode",
-		"latentNode","selectedNode"],
+		"latentNode","selectedNode", "domain"],
 
 	/** @param s : allows Graph to be constructed directly from Dot statements */
 	init : function( s ){

@@ -1,19 +1,26 @@
-/* DAGitty - a browser-based software for causal modelling and analysis
-*   Copyright (C) 2010-2022 Johannes Textor
-* 
-*   This program is free software; you can redistribute it and/or
-*   modify it under the terms of the GNU General Public License
-*   as published by the Free Software Foundation; either version 2
-*   of the License, or (at your option) any later version.
-* 
-*   This program is distributed in the hope that it will be useful,
-*   but WITHOUT ANY WARRANTY; without even the implied warranty of
-*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*   GNU General Public License for more details.
-* 
-*   You should have received a copy of the GNU General Public License
-*   along with this program; if not, write to the Free Software
-*   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. */
+/* 
+ * Models4PT - A derivative of DAGitty for causal modeling in physical therapy.
+ * Based on DAGitty, a browser-based software for causal modeling and analysis.
+ *
+ * Original DAGitty Copyright (C) 2010-2015 Johannes Textor, Benito van der Zander
+ * Portions Copyright (C) 2010-2015 Johannes Textor
+ * 
+ * Models4PT Modifications Copyright (C) 2025 Sean Collins
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 
 
 var GUI = {
