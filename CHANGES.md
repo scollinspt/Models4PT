@@ -1,3 +1,5 @@
+* e1716ac - Added "domain" to Graph class (Sean Collins, 2025-01-23)
+* a060d1a - Update changelog (github-actions[bot], 2025-01-23)
 * 49f620a - Updated style menu label from “classic” to “original” to align with the style name in the codebase (Sean Collins, 2025-01-23)
 * a893a05 - Update changelog (github-actions[bot], 2025-01-23)
 * b8a04e9 - removal of the “SEM-like” style (Sean Collins, 2025-01-23)
