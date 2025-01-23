@@ -92,7 +92,8 @@ var GUI = {
 			Models4PTControl && Models4PTControl.unsetVertexProperty( vid, n )
 		}
 	},
-	set_style : function( s ){
+	// Old set_style function
+	/* 	set_style : function( s ){
 		Models4PT.stylesheets.default = Models4PT.stylesheets[s]
 		var sty = Models4PT.stylesheets.default.style
 		document.getElementById("highlight_ancestral").checked = typeof(sty["confoundernode_inactive"]) === "undefined";
@@ -110,8 +111,87 @@ var GUI = {
 			document.getElementById("li"+n).src="images/legend/"+s+"/"+n+".png"
 		},this);
 		Models4PTControl.setStyle( s )
-	}
+	} */
+
+		//new set style function - may need to be tested when adding a new style
+		/**
+ * Updates the diagram style.
+ * 
+ * This function allows switching between diagram styles. Currently, only the 
+ * "original" style is available by default. Future styles (e.g., "clinical," 
+ * "critical realist review") may be added to support different perspectives 
+ * on the model, such as emphasizing domains or displaying only certain nodes.
+ * 
+ * Future Use Cases:
+ * - "Original": Displays all nodes and connections in the default layout.
+ * - "Clinical": Highlights clinical relevance, including real domain variables.
+ * - "Critical Realist Review": Emphasizes domains and mechanisms within the model.
+ * 
+ * Note: Ensure the menu dynamically updates when new styles are added.
+ */
+		set_style: function (s) {
+			// Check if the style exists in the stylesheets
+			if (!Models4PT.stylesheets[s]) {
+				console.error(`Style "${s}" not found. Falling back to "original".`);
+				s = "original"; // Default to "original" if style not found
+			}
+		
+			// Apply the selected style
+			Models4PT.stylesheets.default = Models4PT.stylesheets[s];
+			var sty = Models4PT.stylesheets.default.style;
+		
+			// Update highlight settings and display/hide legends
+			document.getElementById("highlight_ancestral").checked =
+				typeof sty["confoundernode_inactive"] === "undefined";
+			document.getElementById("highlight_ancestral").checked
+				? displayShow("legend_ancestors")
+				: displayHide("legend_ancestors");
+		
+			document.getElementById("highlight_causal").checked =
+				typeof sty["causalpath_inactive"] === "undefined";
+			document.getElementById("highlight_causal").checked
+				? displayShow("legend_causal")
+				: displayHide("legend_causal");
+		
+			document.getElementById("highlight_biasing").checked =
+				typeof sty["biasingpath_inactive"] === "undefined";
+			document.getElementById("highlight_biasing").checked
+				? displayShow("legend_biasing")
+				: displayHide("legend_biasing");
+		
+			document.getElementById("highlight_puredirect").checked =
+				typeof sty["puredirectpath_inactive"] === "undefined";
+		
+			// Update legend icons for the current style
+			_.each(
+				[
+					"biasingpath",
+					"causalpath",
+					"exposure",
+					"latentnode",
+					"lnode",
+					"mnode",
+					"other",
+					"outcome",
+					"rnode",
+					"adjustednode",
+				],
+				function (n) {
+					var legendElement = document.getElementById("li" + n);
+					if (legendElement) {
+						legendElement.src = `images/legend/${s}/${n}.png`;
+					}
+				},
+				this
+			);
+		
+			// Apply style to the controller
+			Models4PTControl.setStyle(s);
+		},
+
+
 };
+
 
 
 /**
