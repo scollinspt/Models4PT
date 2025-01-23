@@ -298,7 +298,7 @@ E -&gt; D
       </form>
    </div>
 
-   <h3 onclick="displayToggle('dagstyle')"><img src="images/arrow-down.png" alt="" id="a_dagstyle">
+<!--    <h3 onclick="displayToggle('dagstyle')"><img src="images/arrow-down.png" alt="" id="a_dagstyle">
         Diagram style</h3>
    <div id="dagstyle" style="display:block">
       <form autocomplete="off">
@@ -309,7 +309,20 @@ E -&gt; D
          onclick="GUI.set_style('semlike')"/>
             <label for="dagstyle_semlike">SEM-like</label></p>
       </form>
-   </div>
+   </div> -->
+
+   <h3 onclick="displayToggle('dagstyle')"><img src="images/arrow-down.png" alt="" id="a_dagstyle">
+      Diagram style
+  </h3>
+  <div id="dagstyle" style="display:block">
+      <form autocomplete="off">
+          <p>
+              <input type="radio" checked="checked" id="dagstyle_original" name="dagstyle"
+                  onclick="GUI.set_style('original')" />
+              <label for="dagstyle_original">classic</label>
+          </p>
+      </form>
+  </div>
 
    <h3 onclick="displayToggle('coloring')"><img src="images/arrow-down.png" alt="" id="a_coloring"> Coloring</h3>
    <div id="coloring" style="display:block">
