@@ -1,3 +1,5 @@
+* 91ff34d - Transition to cytoscape.js (Sean Collins, 2025-03-19)
+* 2cecc29 - Update changelog (github-actions[bot], 2025-01-23)
 * ef671ff - Merge branch 'master' of https://github.com/scollinspt/Models4PT (Sean Collins, 2025-01-23)
 * 4af7e55 - updated index for launch page (Sean Collins, 2025-01-23)
 * 6fa82d7 - Update changelog (github-actions[bot], 2025-01-23)
