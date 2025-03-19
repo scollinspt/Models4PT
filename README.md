@@ -1,14 +1,14 @@
-# Models4PT: Inspired by DAGitty
+# Models4PT
 
-**Models4PT** will be (is) a dynamic tool for creating and analyzing graphical causal models, inspired by the foundational work of [DAGitty](https://dagitty.net). While preserving and building upon DAGitty’s robust algorithms and user interface, **Models4PT** is being developed to meet the unique needs of physical therapy (PT) clinicians and researchers.
+**Models4PT** 
 
-This repository expands [DAGitty's](https://dagitty.net) core functionality to integrate into the broader **Clinical Inquiry Network** ecosystem, supporting advanced clinical reasoning, causal modeling, and evidence-informed practice in physical therapy based on a critical realist approach to clinical inquiry.
+Built on the cytoscape.js framework (see below)
 
 ---
 
 ## **About Models4PT**
 
-Models4PT will be (is) a dynamic tool for creating and analyzing graphical causal models tailored to the needs of physical therapy clinicians and researchers. It integrates into the Clinical Inquiry Network, which seeks to enhance clinical reasoning, causal modeling, and evidence-informed practice in physical therapy. This initiative includes:
+Models4PT will be a dynamic tool for creating and analyzing graphical causal models tailored to the needs of physical therapy clinicians and researchers. It integrates into the Clinical Inquiry Network, which seeks to enhance clinical reasoning, causal modeling, and evidence-informed practice in physical therapy. This initiative includes:
 
 1. **Stats4PT**:  
    A statistical education and guidance platform for physical therapy.  
@@ -76,16 +76,14 @@ To test or use the current version of Models4PT locally:
 3. Follow the instructions in the GUI for saving/loading models.
 
 ---
+## Credits & Attribution
 
-## **Acknowledgments**
+This project integrates [Cytoscape.js](https://js.cytoscape.org/) for interactive neuromechanical modeling and visualization.  
+It also utilizes the following Cytoscape.js extensions:  
+- [cytoscape-dagre](https://github.com/cytoscape/cytoscape.js-dagre) (for hierarchical layouts)  
+- [cytoscape-cola](https://github.com/cytoscape/cytoscape.js-cola) (for force-directed graph layout)  
 
-We extend our gratitude to [DAGitty.net](https://dagitty.net) and its creator, Johannes Textor, for their pioneering work in causal modeling. Models4PT builds upon DAGitty’s robust foundation to create a tailored tool for physical therapy professionals and researchers.
-
-For more information on DAGitty, visit:
-- Website: [dagitty.net](https://dagitty.net)
-- Publications:
-  1. Textor, J., et al. (2017). [Robust causal inference using directed acyclic graphs](https://doi.org/10.1093/ije/dyw341). *International Journal of Epidemiology*.
-  2. Ankan, A., et al. (2021). [Testing Graphical Causal Models Using the R Package “dagitty”](https://doi.org/10.1002/cpz1.45). *Current Protocols*.
+Cytoscape.js is developed by the [Cytoscape Consortium](https://cytoscape.org/) and licensed under the [MIT License](https://github.com/cytoscape/cytoscape.js/blob/master/LICENSE).  
 
 ---
 
