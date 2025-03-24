@@ -1,98 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Models4PT - A Framework for Clinical Inquiry</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 1.2em;
-            color: #666;
-            max-width: 800px;
-            margin: auto;
-            text-align: left;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .section {
-            margin-top: 30px;
-            text-align: left;
-        }
-        .highlight {
-            font-weight: bold;
-            color: #0074D9;
-        }
-        .mode {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 20px;
-            background-color: #fafafa;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <title>Models4PT Network</title>
+  <script src="https://unpkg.com/cytoscape@3.21.0/dist/cytoscape.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Models4PT</h1>
-        <p>An interactive framework for **neuromechanical modeling, Bayesian inference, and causal analysis** in movement science.</p>
-        <p>**Bridging population statistics and individual decision-making through a critical realist approach.**</p>
+  <h1>Models4PT Neuromuscular Network</h1>
+  <div id="cy"></div>
 
-        <div class="section">
-            <h2>Why Models4PT?</h2>
-            <p>Evidence-based practice relies heavily on population statistics, but individual cases demand **mechanism-based reasoning**.  
-               Models4PT integrates **neuromechanical modeling, causal inference, and Bayesian decision-making** into a single platform,  
-               allowing clinicians and researchers to explore **how dysfunction propagates and how evidence should inform decisions.**</p>
-        </div>
+  <script src="graph-data.js"></script>
+  <script>
+    const cy = cytoscape({
+      container: document.getElementById('cy'),
+      elements: graphElements,
+      style: [
+        {
+          selector: 'node',
+          style: {
+            'label': 'data(label)',
+            'background-color': '#0074D9',
+            'color': '#fff',
+            'text-valign': 'center',
+            'text-halign': 'center'
+          }
+        },
+        {
+          selector: 'edge',
+          style: {
+            'width': 2,
+            'line-color': '#aaa',
+            'target-arrow-shape': 'triangle',
+            'target-arrow-color': '#aaa',
+            'curve-style': 'bezier'
+          }
+        }
+      ],
+      layout: {
+        name: 'cose'
+      }
+    });
 
-        <div class="section">
-            <h2>The Three Modes of Inquiry</h2>
-
-            <div class="mode">
-                <h3>1️⃣ Neuromechanical Modeling</h3>
-                <p>Interactive **Cytoscape.js-based networks** visualize muscle synergies, joint stability, and movement constraints.</p>
-                <p><span class="highlight">Use Cases:</span> Movement dysfunction analysis, regional interdependence, motor control adaptations.</p>
-            </div>
-
-            <div class="mode">
-                <h3>2️⃣ Causal Analysis (DAGs & Directed Graphs)</h3>
-                <p>**DAG-based models** clarify whether movement impairments are **correlations or causal factors.**  
-                   Identify confounders, mediators, and effect modifiers in movement dysfunction research.</p>
-                <p><span class="highlight">Use Cases:</span> Investigating low back pain mechanisms, analyzing SFMA dysfunctions.</p>
-            </div>
-
-            <div class="mode">
-                <h3>3️⃣ Bayesian Inference & Clinical Decision-Making</h3>
-                <p>Move beyond static "evidence-based" claims—**apply probabilistic reasoning to real cases.**  
-                   Bayesian modeling personalizes **decision-making by integrating both prior knowledge and patient-specific data.**</p>
-                <p><span class="highlight">Use Cases:</span> Predicting movement compensations, refining clinical assessments.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Coming Soon</h2>
-            <p>Models4PT is currently in development. Upcoming features include:</p>
-            <ul>
-                <li>Interactive **neuromechanical network visualization**</li>
-                <li>**Bayesian modeling tools** for clinical reasoning</li>
-                <li>Graph-based **causal modeling** to refine movement science research</li>
-                <li>Integration with **SFMA, PNF, and OpenSim** modeling</li>
-            </ul>
-        </div>
-    </div>
+    // Example interaction: click node to alert name
+    cy.on('tap', 'node', function(evt){
+      const node = evt.target;
+      alert(`You clicked on node: ${node.data('label')}`);
+    });
+  </script>
 </body>
 </html>
