@@ -1,3 +1,5 @@
+* b71f421 - "Force rebuild" (Sean Collins, 2025-03-24)
+* 3d0cbd8 - Update changelog (github-actions[bot], 2025-03-24)
 * b403e02 - Merge branch 'master' of https://github.com/scollinspt/Models4PT (Sean Collins, 2025-03-24)
 * 8efe1b3 - moved github pages to docs folder (Sean Collins, 2025-03-24)
 * 1fea874 - Update changelog (github-actions[bot], 2025-03-24)
