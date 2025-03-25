@@ -1,3 +1,5 @@
+* 1300eec - Update README.md (Sean Collins, 2025-03-25)
+* 55d12a4 - Update changelog (github-actions[bot], 2025-03-25)
 * c457945 - Revert back to DAGitty (Sean Collins, 2025-03-25)
 * e99c28f - Update index.html (Sean Collins, 2025-03-25)
 * 80f1f19 - Update changelog (github-actions[bot], 2025-03-25)
