@@ -43,7 +43,7 @@
     // Pull the elements and style from the named network
     const networkName = "Neuromechanical_2";
     const elements = networks[networkName].elements;
-    const style = styles[networkName];
+    const style = styles.find(s => s.title === "Ripple").style;
 
     const cy = cytoscape({
       container: document.getElementById('cy'),
