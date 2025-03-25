@@ -1,6 +1,6 @@
 # Models4PT: Inspired by DAGitty
 
-**Models4PT** will be (is) a dynamic tool for creating and analyzing graphical causal models, inspired by the foundational work of [DAGitty](https://dagitty.net). While preserving and building upon DAGitty’s robust algorithms and user interface, **Models4PT** is being developed to meet the unique needs of physical therapy (PT) clinicians and researchers.
+**Models4PT** will be a dynamic tool for creating and analyzing graphical causal models, inspired by the foundational work of [DAGitty](https://dagitty.net). While preserving and building upon DAGitty’s robust algorithms and user interface, **Models4PT** is being developed to meet the unique needs of physical therapy (PT) clinicians and researchers.
 
 This repository expands [DAGitty's](https://dagitty.net) core functionality to integrate into the broader **Clinical Inquiry Network** ecosystem, supporting advanced clinical reasoning, causal modeling, and evidence-informed practice in physical therapy based on a critical realist approach to clinical inquiry.
 
