@@ -1,3 +1,5 @@
+* 0b04a05 - Update .DS_Store (Sean Collins, 2025-07-28)
+* ded7070 - Update changelog (github-actions[bot], 2025-03-25)
 * 1300eec - Update README.md (Sean Collins, 2025-03-25)
 * 55d12a4 - Update changelog (github-actions[bot], 2025-03-25)
 * c457945 - Revert back to DAGitty (Sean Collins, 2025-03-25)
