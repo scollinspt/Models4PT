@@ -1,8 +1,8 @@
 # Models4PT
 
-**Models4PT is an open platform for constructing, integrating, and evolving computable causal representations of biomedical knowledge.**
+**Models4PT will be an open platform for constructing, integrating, and evolving computable causal representations of biomedical knowledge.**
 
-Rather than treating individual research studies as isolated pieces of evidence, Models4PT represents scientific knowledge as an evolving network of probabilistic causal models that can be synthesized across publications and ultimately instantiated for patient-specific reasoning.
+Models4PT represents scientific knowledge as an evolving network of probabilistic causal models that can be synthesized across publications and ultimately instantiated for patient-specific reasoning, rather than treating individual research studies as isolated pieces of evidence.
 
 Models4PT is designed to answer a single question:
 
@@ -16,7 +16,7 @@ It serves as the population knowledge layer for downstream reasoning systems, in
 
 # Vision
 
-Scientific knowledge should accumulate as structured causal knowledge rather than disconnected publications.
+Scientific knowledge accumulates as structured causal knowledge rather than disconnected publications.
 
 Every research study contributes evidence toward refining a shared representation of biomedical mechanisms.
 
@@ -265,12 +265,29 @@ in a modern web browser.
 The current repository contains early prototypes while the platform architecture continues to evolve.
 
 ---
+# Theoretical Foundations
 
-# Citation
+Models4PT is grounded in work from causal inference, probabilistic graphical modeling, philosophy of science, and biomedical knowledge representation.
 
-If you use Models4PT in academic work, please cite this repository and any associated publications.
+Its architecture is informed by several complementary perspectives:
 
-(Citation information will be added as publications become available.)
+- Structural Causal Models and Directed Acyclic Graphs (Pearl, Greenland, Hernán, Textor)
+- Bayesian reasoning and probabilistic graphical models
+- Scientific model synthesis and knowledge integration
+- Critical realism and mechanistic explanation
+- The transition from population-level scientific knowledge to patient-specific clinical reasoning
+
+The design of Models4PT is particularly motivated by the following publications:
+
+- **Collins, S.M. (2026). _From Population Knowledge to Patient Reasoning._**
+
+  https://philpapers.org/rec/COLFPK
+
+- **Collins, S.M. (2018). _Synthesis: Causal Models, Causal Knowledge, and Scientific Representation._**
+
+  *Cardiopulmonary Physical Therapy Journal.*
+
+  https://doi.org/10.1097/CPT.0000000000000101
 
 ---
 
