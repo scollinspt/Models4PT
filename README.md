@@ -1,100 +1,285 @@
-# Models4PT: Inspired by DAGitty
+# Models4PT
 
-**Models4PT** will be a dynamic tool for creating and analyzing graphical causal models, inspired by the foundational work of [DAGitty](https://dagitty.net). While preserving and building upon DAGitty’s robust algorithms and user interface, **Models4PT** is being developed to meet the unique needs of physical therapy (PT) clinicians and researchers.
+**Models4PT is an open platform for constructing, integrating, and evolving computable causal representations of biomedical knowledge.**
 
-This repository expands [DAGitty's](https://dagitty.net) core functionality to integrate into the broader **Clinical Inquiry Network** ecosystem, supporting advanced clinical reasoning, causal modeling, and evidence-informed practice in physical therapy based on a critical realist approach to clinical inquiry.
+Rather than treating individual research studies as isolated pieces of evidence, Models4PT represents scientific knowledge as an evolving network of probabilistic causal models that can be synthesized across publications and ultimately instantiated for patient-specific reasoning.
 
----
+Models4PT is designed to answer a single question:
 
-## **About Models4PT**
+> **What do we collectively know?**
 
-Models4PT will be (is) a dynamic tool for creating and analyzing graphical causal models tailored to the needs of physical therapy clinicians and researchers. It integrates into the Clinical Inquiry Network, which seeks to enhance clinical reasoning, causal modeling, and evidence-informed practice in physical therapy. This initiative includes:
+It serves as the population knowledge layer for downstream reasoning systems, including Bayesian clinical reasoning engines that answer:
 
-1. **Stats4PT**:  
-   A statistical education and guidance platform for physical therapy.  
-   [Learn more here](https://peripateticpt.substack.com/p/welcome-to-stats4pt).
-
-2. **The Clinical Inquiry Fellowship**:  
-   A program for advancing clinical reasoning and critical inquiry in PT practice.  
-   [Learn more here](https://peripateticpt.substack.com/p/clinical-inquiry-fellowship).
-
-3. **Collaborative Tools**:  
-   A suite of resources to model complex patient cases, integrate research findings, and explore clinical reasoning frameworks.
+> **Given this patient, what does that knowledge imply?**
 
 ---
 
-## **Enhancements in Progress**
+# Vision
 
-### **Transition to a PT-Focused Tool**
-- Adapting the platform to address physical therapy-specific use cases.
-- Adding customizable templates and libraries for common PT causal models.
+Scientific knowledge should accumulate as structured causal knowledge rather than disconnected publications.
 
-### **Integration of Bhaskar’s Critical Realist Framework**
-- Explicit modeling of the **empirical, actual, and real domains** in causal modeling.
-- Support for latent variables and deeper structural analysis (including hierarchical models - see below).
+Every research study contributes evidence toward refining a shared representation of biomedical mechanisms.
 
-### **Expanded Inference Methodologies**
-To support comprehensive clinical reasoning, Models4PT will integrate options for probabilistic causal inference models, including:
-1. **Induction (Statistical Inference)**:  
-   - Analyzing patterns and generalizations from data to support clinical decisions.
-2. **Deduction (Probability Logic)**:  
-   - Exploring deterministic and probabilistic relationships between variables.
-3. **Abduction (Bayesian Inference)**:  
-   - Generating hypotheses and evaluating their likelihood using Bayesian methods.
+Models4PT provides the infrastructure to:
 
-### **Improved User Experience**
-- Enhanced saving/loading functionality using local storage and, eventually, backend storage for collaborative workflows.
-- Streamlined interfaces for creating, modifying, and exporting models.
+- Extract causal knowledge from scientific literature
+- Construct graphical causal models
+- Integrate evidence across multiple studies
+- Track provenance and uncertainty
+- Maintain versioned causal knowledge
+- Expose population-level models through machine-readable APIs
+- Support downstream patient-specific reasoning systems
 
-### **Planned Extensions**
-1. Hosting the platform at **models4pt.com** to provide a publicly accessible, PT-centric tool.
-2. Adding features to:
-   - Identify and visualize confounders relevant to PT interventions and research.
-   - Automate suggestions for evidence-based adjustments to causal models.
-3. Integration into broader clinical reasoning education and consulting services.
-
-### Hierarchical Model Support
-
-Models4PT is preparing to support hierarchical causal models. This functionality will allow nodes to reference submodels, enabling multilevel causal reasoning and integration of critical realist perspectives.
-
-**Key Objectives**:
-- Extend variable metadata to include submodel references.
-- Prepare the backend database for hierarchical relationships.
-- Ensure algorithms like adjustment set calculation and d-separation are hierarchy-ready.
-- Add placeholders in the interface for hierarchical metadata.
-
-**Future Goals**:
-This feature will support advanced use cases, including nested causal systems and multilevel analyses, while preserving compatibility with current core functionality.
+The long-term goal is to build a continuously evolving computational representation of biomedical knowledge that supports transparent, explainable, and evidence-based reasoning.
 
 ---
 
-## **Running the GUI Locally**
+# Project Architecture
 
-To test or use the current version of Models4PT locally:
-1. Clone the repository.
-2. Open `gui/dags.html` in a modern web browser.
-3. Follow the instructions in the GUI for saving/loading models.
+```text
+Scientific Literature
+        │
+        ▼
+Knowledge Extraction
+        │
+        ▼
+Causal Model Construction
+        │
+        ▼
+Knowledge Integration
+        │
+        ▼
+Models4PT Knowledge Repository
+        │
+        ▼
+Models4PT API
+        │
+        ├───────────────┐
+        ▼               ▼
+Researchers      Clinical Applications
+                     │
+                     ▼
+ Bayesian Clinical Reasoning Engine
+                     │
+                     ▼
+ Patient-specific reasoning
+```
+
+Models4PT is **not** itself a clinical decision support system.
+
+Instead, it provides the population-level causal knowledge that can be instantiated by downstream reasoning systems.
 
 ---
 
-## **Acknowledgments**
+# Core Capabilities
 
-We extend our gratitude to [DAGitty.net](https://dagitty.net) and its creator, Johannes Textor, for their pioneering work in causal modeling. Models4PT builds upon DAGitty’s robust foundation to create a tailored tool for physical therapy professionals and researchers.
+## Knowledge Extraction
 
-For more information on DAGitty, visit:
-- Website: [dagitty.net](https://dagitty.net)
-- Publications:
-  1. Textor, J., et al. (2017). [Robust causal inference using directed acyclic graphs](https://doi.org/10.1093/ije/dyw341). *International Journal of Epidemiology*.
-  2. Ankan, A., et al. (2021). [Testing Graphical Causal Models Using the R Package “dagitty”](https://doi.org/10.1002/cpz1.45). *Current Protocols*.
+Automatically identify and extract:
+
+- Variables
+- Interventions
+- Outcomes
+- Mediators
+- Moderators
+- Confounders
+- Effect estimates
+- Causal assumptions
+- Sources of uncertainty
+
+from biomedical publications.
 
 ---
 
-## **Contact**
+## Causal Model Construction
 
-For questions about this project or collaboration opportunities, please contact:
-- **Sean Collins, PT, ScD**  
-  [Peripatetic PT](https://peripateticpt.substack.com/)  
-  [Stats4PT](https://peripateticpt.substack.com/p/welcome-to-stats4pt)  
-  [Clinical Inquiry Fellowship](https://peripateticpt.substack.com/p/clinical-inquiry-fellowship)  
+Create machine-readable causal models using graphical representations including:
 
-  Updated as of January 21, 2025
+- Directed Acyclic Graphs (DAGs)
+- Bayesian Networks
+- Structural Causal Models
+- Probabilistic Graphical Models
+
+---
+
+## Knowledge Integration
+
+Combine evidence across multiple publications while preserving:
+
+- provenance
+- evidence quality
+- uncertainty
+- conflicting evidence
+- competing hypotheses
+- version history
+
+---
+
+## Knowledge Repository
+
+Maintain an evolving repository of biomedical knowledge consisting of:
+
+- concepts
+- variables
+- causal relationships
+- evidence
+- effect estimates
+- uncertainty
+- provenance
+
+rather than isolated research papers.
+
+---
+
+## API
+
+Expose computable biomedical knowledge for:
+
+- Clinical reasoning engines
+- Research software
+- Educational tools
+- Evidence synthesis platforms
+- Decision support systems
+
+---
+
+# Initial Application Domain
+
+Initial development focuses on rehabilitation and physical therapy.
+
+The underlying architecture is intentionally domain-independent and is designed to support broader biomedical knowledge representation as the platform matures.
+
+---
+
+# Planned Features
+
+## Literature-to-Model Pipeline
+
+- Import scientific publications
+- LLM-assisted causal knowledge extraction
+- Human review workflows
+- Automatic generation of causal graphs
+
+---
+
+## Knowledge Integration
+
+- Variable mapping
+- Ontology alignment
+- Evidence synthesis
+- Confidence estimation
+- Conflict resolution
+
+---
+
+## Hierarchical Models
+
+Support hierarchical causal systems by allowing nodes to reference nested causal models.
+
+This enables representation of:
+
+- physiological subsystems
+- biomechanical systems
+- psychological models
+- social determinants
+- multiscale biological mechanisms
+
+---
+
+## Collaboration
+
+Support collaborative scientific knowledge development through:
+
+- version control
+- provenance tracking
+- contributor attribution
+- peer review workflows
+- model comparison
+- evidence auditing
+
+---
+
+# Relationship to the Bayesian Clinical Reasoning Engine
+
+Models4PT and the Bayesian Clinical Reasoning Engine serve complementary purposes.
+
+| Models4PT | Bayesian Clinical Reasoning Engine |
+|-----------|------------------------------------|
+| Population knowledge | Individual patient reasoning |
+| Scientific evidence | Patient observations |
+| Knowledge construction | Knowledge application |
+| Causal model repository | Bayesian inference |
+| "What do we collectively know?" | "What does this imply for this patient?" |
+
+---
+
+# Origins
+
+Models4PT was originally inspired by the pioneering work of **DAGitty** and the work of **Johannes Textor**, whose contributions demonstrated the value of graphical causal models for scientific reasoning and causal inference.
+
+Early prototypes explored extending DAGitty for rehabilitation research.
+
+As the project's vision evolved, Models4PT expanded beyond an interactive DAG editor into a broader platform for:
+
+- causal knowledge extraction
+- evidence integration
+- provenance tracking
+- versioned causal knowledge
+- population-level model construction
+- machine-readable biomedical knowledge
+
+We gratefully acknowledge the DAGitty project as an important intellectual influence on the development of Models4PT.
+
+---
+
+# Technology Roadmap
+
+Current priorities include:
+
+- Python backend
+- FastAPI services
+- PostgreSQL knowledge repository
+- Graph-based model representation
+- LLM-assisted knowledge extraction
+- Knowledge versioning
+- REST API
+- Interactive web interface
+- Collaborative workflows
+
+---
+
+# Running the Current Prototype
+
+```bash
+git clone https://github.com/scollinspt/Models4PT.git
+```
+
+Open:
+
+```
+gui/dags.html
+```
+
+in a modern web browser.
+
+The current repository contains early prototypes while the platform architecture continues to evolve.
+
+---
+
+# Citation
+
+If you use Models4PT in academic work, please cite this repository and any associated publications.
+
+(Citation information will be added as publications become available.)
+
+---
+
+# Contact
+
+**Sean M. Collins, PT, ScD**
+
+GitHub: https://github.com/scollinspt
+
+---
+
+*Models4PT is an evolving open-source research project exploring causal knowledge representation, evidence synthesis, and computational clinical reasoning.*
