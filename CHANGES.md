@@ -1,3 +1,5 @@
+* cfa15fb - Refine language in README for clarity (Sean Collins, 2026-08-08)
+* aa6e83c - Update changelog (github-actions[bot], 2026-08-08)
 * 2e6cda5 - Revise README for Models4PT overview and details (Sean Collins, 2026-08-08)
 * 92e5d7c - Update changelog (github-actions[bot], 2025-07-28)
 * 0b04a05 - Update .DS_Store (Sean Collins, 2025-07-28)
