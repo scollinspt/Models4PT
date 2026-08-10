@@ -1,3 +1,6 @@
+* 07d3204 - re-write of README (Sean Collins, 2026-08-10)
+* 8127f39 - added project foundation docs (Sean Collins, 2026-08-10)
+* 1664ee9 - Update changelog (github-actions[bot], 2026-08-10)
 * 17da57a - readme updates (Sean Collins, 2026-08-10)
 * a2c0b1f - Update changelog (github-actions[bot], 2026-08-10)
 * 9fc24ee - Deleted Bayesian from README (Sean Collins, 2026-08-10)
