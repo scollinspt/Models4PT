@@ -199,7 +199,7 @@ Support collaborative scientific knowledge development through:
 
 ---
 
-# Relationship to the Bayesian Clinical Reasoning Engine
+# Relationship to the Clinical Reasoning Engine
 
 Models4PT and the Bayesian Clinical Reasoning Engine serve complementary purposes.
 
