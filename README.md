@@ -117,6 +117,18 @@ For example:
 
 Preserving these distinctions is necessary for scientifically coherent knowledge integration.
 
+## Stage 1 Domain Experiment Baseline
+
+The current backend domain implementation is accepted as the first Models4PT Stage 1 domain experiment baseline.
+It is intentionally minimal and experimental; the following constraints are not final scientific commitments:
+
+- one Concept per Variable
+- binary `ProposedCausalClaim`
+- cause and effect must have different `variable_id` values
+- no `Observation`/`MeasurementResult` object yet
+- no `CanonicalCausalAssertion` yet
+- no DAG or global acyclicity constraint
+
 ---
 
 ## Minimal Backend Scaffold
