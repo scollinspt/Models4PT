@@ -1,3 +1,5 @@
+* 9fc24ee - Deleted Bayesian from README (Sean Collins, 2026-08-10)
+* 31ea64b - Update changelog (github-actions[bot], 2026-08-10)
 * 6e0726f - updated README (Sean Collins, 2026-08-10)
 * 5d3e07b - Update changelog (github-actions[bot], 2026-08-08)
 * cfa15fb - Refine language in README for clarity (Sean Collins, 2026-08-08)
