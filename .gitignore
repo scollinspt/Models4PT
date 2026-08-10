@@ -1,3 +1,19 @@
 *.swp
 
 .Rproj.user
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+venv/
+ENV/
+.env
+
+# Editor files
+.vscode/
+
+# Frontend
+frontend/node_modules/

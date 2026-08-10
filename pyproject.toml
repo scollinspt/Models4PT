@@ -1,0 +1,27 @@
+[project]
+name = "models4pt"
+version = "0.1.0"
+description = "Models4PT core backend scaffold for building a population-level causal knowledge platform."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Models4PT Development Team" }
+]
+classifiers = [
+  "Framework :: FastAPI",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+  "fastapi>=0.110.0",
+  "uvicorn[standard]>=0.23.0",
+  "pydantic>=2.7"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.4", "httpx>=0.26"]
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"

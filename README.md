@@ -119,6 +119,34 @@ Preserving these distinctions is necessary for scientifically coherent knowledge
 
 ---
 
+## Minimal Backend Scaffold
+
+This repository now includes a minimal Python backend scaffold for Models4PT using FastAPI.
+
+### Start the app
+
+```bash
+python -m uvicorn src.models4pt.app:app --reload
+```
+
+### Run tests
+
+```bash
+python -m pip install -e .[test]
+python -m pytest
+```
+
+### What’s included
+
+- `pyproject.toml` for Python packaging and dependencies
+- `src/models4pt/app.py` FastAPI application with basic health endpoints
+- `tests/test_app.py` minimal HTTP tests using FastAPI TestClient
+- GitHub Actions workflow at `.github/workflows/python-app.yml`
+
+Existing project foundation documents remain in `doc/project-foundation/`.
+
+---
+
 ## Shared Ontology
 
 Models4PT includes a shared ontology that provides the semantic structure required to integrate knowledge contributed across studies and researchers.
