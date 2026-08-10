@@ -1,3 +1,5 @@
+* 6e0726f - updated README (Sean Collins, 2026-08-10)
+* 5d3e07b - Update changelog (github-actions[bot], 2026-08-08)
 * cfa15fb - Refine language in README for clarity (Sean Collins, 2026-08-08)
 * aa6e83c - Update changelog (github-actions[bot], 2026-08-08)
 * 2e6cda5 - Revise README for Models4PT overview and details (Sean Collins, 2026-08-08)
