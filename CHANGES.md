@@ -1,3 +1,5 @@
+* d3d44c0 - Change license from GPL-2.0 to Apache-2.0 (Sean Collins, 2026-08-10)
+* 469df21 - Update changelog (github-actions[bot], 2026-08-10)
 * 07d3204 - re-write of README (Sean Collins, 2026-08-10)
 * 8127f39 - added project foundation docs (Sean Collins, 2026-08-10)
 * 1664ee9 - Update changelog (github-actions[bot], 2026-08-10)
