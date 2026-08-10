@@ -25,3 +25,7 @@ test = ["pytest>=8.4", "httpx>=0.26"]
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["models4pt"]
+package-dir = {"" = "src"}
