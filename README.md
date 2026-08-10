@@ -203,7 +203,7 @@ Support collaborative scientific knowledge development through:
 
 Models4PT and the Bayesian Clinical Reasoning Engine serve complementary purposes.
 
-| Models4PT | Bayesian Clinical Reasoning Engine |
+| Models4PT | Clinical Reasoning Engine |
 |-----------|------------------------------------|
 | Population knowledge | Individual patient reasoning |
 | Scientific evidence | Patient observations |
