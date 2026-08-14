@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   backend:
     build: .
@@ -9,4 +7,4 @@ services:
       - PYTHONUNBUFFERED=1
     volumes:
       - .:/app
-    command: uvicorn src.models4pt.app:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn models4pt.app:app --host 0.0.0.0 --port 8000 --reload

@@ -8,7 +8,9 @@ async function fetchHealth() {
 }
 
 export default function Health() {
-  const { data, isLoading, error } = useQuery(['health'], fetchHealth, {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['health'],
+    queryFn: fetchHealth,
     retry: 0,
   })
 

@@ -11,6 +11,8 @@ authors = [
 classifiers = [
   "Framework :: FastAPI",
   "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "License :: OSI Approved :: MIT License"
 ]
 dependencies = [
@@ -20,7 +22,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = ["pytest>=8.4", "httpx>=0.26"]
+test = ["pytest>=8.4", "httpx2>=2.10"]
+dev = [
+  "pytest>=8.4",
+  "httpx2>=2.10",
+  "setuptools>=68.0",
+  "wheel>=0.45"
+]
 
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
