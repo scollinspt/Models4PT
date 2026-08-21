@@ -1,0 +1,46 @@
+dag {
+"(a-v)O2" [pos="-0.233,-0.578"]
+"6MWD" [outcome,pos="0.095,-0.577"]
+AT [exposure,pos="-0.259,-0.773"]
+Anaerobic_Threshold [pos="-0.034,-0.564"]
+Balance [pos="0.217,-0.734"]
+"Bio/PhysioStatus" [pos="-0.155,-0.387"]
+Cardiac_Output [pos="-0.268,-0.459"]
+ES [exposure,pos="-0.069,-0.699"]
+FunctionalStatus [pos="0.091,-0.445"]
+Gait_Speed [pos="0.239,-0.540"]
+HRQOL [outcome,pos="0.205,-0.324"]
+HealthPerception [pos="0.215,-0.222"]
+Mechanical_Efficiency [pos="0.090,-0.694"]
+Muscle_Function [pos="-0.165,-0.658"]
+Social [pos="-0.026,-0.180"]
+SymptomStatus [pos="-0.128,-0.272"]
+VO2_max [outcome,pos="-0.158,-0.504"]
+"(a-v)O2" -> VO2_max
+"6MWD" -> FunctionalStatus
+AT -> Balance
+AT -> Cardiac_Output
+AT -> Mechanical_Efficiency
+AT -> Muscle_Function
+Anaerobic_Threshold -> "6MWD"
+Balance -> "6MWD"
+Balance -> Gait_Speed
+"Bio/PhysioStatus" -> FunctionalStatus
+"Bio/PhysioStatus" -> SymptomStatus
+Cardiac_Output -> VO2_max
+ES -> Muscle_Function
+FunctionalStatus -> HRQOL
+Gait_Speed -> "6MWD"
+HealthPerception -> HRQOL
+Mechanical_Efficiency -> "6MWD"
+Muscle_Function -> "(a-v)O2"
+Muscle_Function -> Anaerobic_Threshold
+Social -> FunctionalStatus
+Social -> HRQOL
+Social -> HealthPerception
+SymptomStatus -> FunctionalStatus
+SymptomStatus -> HRQOL
+SymptomStatus -> HealthPerception
+VO2_max -> Anaerobic_Threshold
+VO2_max -> "Bio/PhysioStatus"
+}

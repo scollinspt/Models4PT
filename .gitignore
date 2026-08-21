@@ -27,3 +27,7 @@ frontend/dist/
 
 # Operating-system files
 .DS_Store
+
+# Third-party copyrighted source material (case studies may reference these
+# locally but must not redistribute them)
+doc/case-studies/**/Realist Theory of Science.pdf
