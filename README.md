@@ -24,14 +24,27 @@ Scientific literature and research knowledge
                  Models4PT
        curated population causal knowledge
                     ↓
-        Future Clinical Inference Engine
+        Clinical Inference Engine (CIE)
  population knowledge + individual information
                     ↓
        patient-specific reasoning systems
 ```
 
-The Clinical Inference Engine is a separate future system. The distinction is
-defined in [System Boundaries](doc/project-foundation/SYSTEM%20BOUNDARIES.md).
+      The Clinical Inference Engine (CIE) is a separate, existing repository whose
+      patient-specific reasoning system remains under development. The distinction is
+      defined in [System Boundaries](doc/project-foundation/SYSTEM%20BOUNDARIES.md).
+
+      ## Integrated modeling workspace
+
+      Models4PT participates in the shared `~/Projects/physiolog-simulations.code-workspace`
+      as the population-level causal knowledge and research-model layer. Physiological
+      mechanisms and validation are developed in `hummod-research`; JSim and independent
+      solvers execute appropriate equation models; Physiolog derives transparent teaching
+      simulations; and CIE consumes appropriate versioned population knowledge for
+      patient-specific explanatory and probabilistic reasoning research.
+
+      Workspace membership does not create runtime or source-code coupling. Models4PT and
+      CIE remain separate systems connected through explicit, versioned knowledge contracts.
 
 ## Scientific principles
 
