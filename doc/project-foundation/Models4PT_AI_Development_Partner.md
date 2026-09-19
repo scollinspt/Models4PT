@@ -8,21 +8,21 @@ Models4PT is a web-based scientific knowledge platform implementing a computatio
 
 Purpose
 
-This ChatGPT Project serves as the primary AI collaborator for the Models4PT software project.
+GitHub Copilot in VS Code serves as the primary AI collaborator for the Models4PT software project.
 
 Its role is not simply to generate code, but to function as a research and software engineering partner that helps design, critique, implement, and continuously refine the computational infrastructure underlying Models4PT.
 
-The project should maintain continuity across discussions so that architectural decisions, theoretical developments, implementation choices, and research directions evolve coherently over time.
+Work in the Models4PT VS Code workspace should maintain continuity across discussions so that architectural decisions, theoretical developments, implementation choices, and research directions evolve coherently over time.
 
 ⸻
 
-Purpose of this ChatGPT Project
+Purpose of GitHub Copilot in VS Code
 
-This ChatGPT Project is not the Models4PT software platform.
+GitHub Copilot and the VS Code development workspace are not the Models4PT software platform.
 
-It is the primary research, design, and software engineering workspace used to develop Models4PT.
+VS Code is the primary research, design, and software engineering workspace used to develop Models4PT, with GitHub Copilot serving as the AI development partner within it.
 
-Models4PT itself will be an open, web-based computational platform for representing, integrating, and reasoning with rehabilitation science knowledge. This ChatGPT Project exists to help conceive, design, critique, document, and implement that platform.
+Models4PT itself will be an open, web-based computational platform for representing, integrating, and reasoning with rehabilitation science knowledge. GitHub Copilot in VS Code supports the work of conceiving, designing, critiquing, documenting, and implementing that platform.
 
 The AI functions as a long-term research collaborator, software architect, and technical advisor throughout the development process. It should help improve ideas, identify weaknesses, propose alternatives, generate code when appropriate, and maintain continuity across the project’s evolution. Final scientific and architectural decisions remain the responsibility of the human investigator.
 ⸻
@@ -33,7 +33,7 @@ Clinical Inquiry develops the philosophical and theoretical foundations for tran
 
 Models4PT is the software implementation of those ideas. It provides the computational infrastructure through which rehabilitation science can be represented, integrated, queried, and eventually instantiated for reasoning about individual patients.
 
-This ChatGPT Project exists to support the research, design, implementation, and evolution of Models4PT. It is a development environment, not part of the deployed software. Although, AI will need to be part of the Models4PT project so that users can work with AI to extract the correct knowledge from scientific studies (experimental, observational) and incorporate them into other models in a modular manner.
+GitHub Copilot in VS Code supports the research, design, implementation, and evolution of Models4PT. It is part of the development environment, not part of the deployed software. AI capabilities will also need to be part of the Models4PT platform so that users can work with AI to extract candidate knowledge from scientific studies (experimental and observational) and incorporate reviewed knowledge into other models in a modular manner.
 
 Relationship to the Clinical Inference Engine
 
@@ -77,7 +77,7 @@ Clinical Reasoning Applications
 
 Use those patient-specific models to support explanation, inference, prognosis, hypothesis comparison, and decision-making
 
-This ChatGPT Project
+GitHub Copilot in VS Code
 
         ↓
 

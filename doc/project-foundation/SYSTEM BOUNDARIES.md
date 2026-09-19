@@ -415,13 +415,13 @@ Within future reasoning systems, AI may also assist with interaction, explanatio
 
 ⸻
 
-11. This ChatGPT Project
+11. GitHub Copilot in VS Code
 
 Role
 
-The Clinical Inquiry Platform ChatGPT Project is a development workspace and AI collaborator.
+The Models4PT VS Code workspace is the development environment, and GitHub Copilot is its AI development partner.
 
-It is not Models4PT, the Clinical Inference Engine, the ontology, or the deployed scientific repository.
+Neither the development workspace nor GitHub Copilot is Models4PT, the Clinical Inference Engine, the ontology, or the deployed scientific repository.
 
 Its role is to assist with:
 

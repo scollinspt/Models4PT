@@ -140,6 +140,11 @@ This vertical workflow will establish the repository and curation foundations
 before broader literature ingestion, visualization, collaboration, and
 downstream reasoning interfaces are attempted.
 
+Current tasks, working definitions, and completion criteria are tracked in the
+[Active Workplan](doc/WORKPLAN.md). Design decisions awaiting principal
+investigator input are collected in the
+[Curation Record Questions](doc/CURATION_RECORD_QUESTIONS.md).
+
 The longer research and software roadmap is described in the
 [Software Project](doc/project-foundation/Models4PT_Software_Project.md) and
 [Research Program](doc/project-foundation/Models4PT_Research_Program.md).
