@@ -34,17 +34,21 @@ Scientific literature and research knowledge
       patient-specific reasoning system remains under development. The distinction is
       defined in [System Boundaries](doc/project-foundation/SYSTEM%20BOUNDARIES.md).
 
-      ## Integrated modeling workspace
+      ## Development workspaces
 
-      Models4PT participates in the shared `~/Projects/physiolog-simulations.code-workspace`
-      as the population-level causal knowledge and research-model layer. Physiological
-      mechanisms and validation are developed in `hummod-research`; JSim and independent
-      solvers execute appropriate equation models; Physiolog derives transparent teaching
-      simulations; and CIE consumes appropriate versioned population knowledge for
-      patient-specific explanatory and probabilistic reasoning research.
+      Use the repository's `Models4PT.code-workspace` for day-to-day Models4PT
+      implementation. This keeps searches, agents, tests, and edits focused on the system
+      that owns population-level knowledge.
+
+      Use `~/Projects/clinical-inquiry-ecosystem.code-workspace` at milestone boundaries or
+      when a change affects a cross-project representation, educational handoff, or
+      software/data interface. Use `~/Projects/physiolog-simulations.code-workspace` only
+      when work also requires physiological model development or simulation validation.
 
       Workspace membership does not create runtime or source-code coupling. Models4PT and
       CIE remain separate systems connected through explicit, versioned knowledge contracts.
+      See [Integration Guide](doc/INTEGRATION.md) for the development rules and checkpoints
+      that keep dedicated work usable by the rest of the ecosystem.
 
 ## Scientific principles
 
@@ -68,7 +72,7 @@ Models4PT is in an early research and software-design stage. The repository curr
 
 Implemented today:
 
-- Python representations of concepts, variables,measurements, sources,
+- Python representations of concepts, variables, measurements, sources,
   evidence, proposed causal claims, and curation decisions
 - a deliberately simple candidate-extraction experiment
 - an explicit ontology-resolution boundary between extracted terms and

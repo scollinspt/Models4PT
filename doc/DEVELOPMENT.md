@@ -4,6 +4,30 @@ This guide describes the repository as it exists today. The documents in
 `doc/project-foundation/` describe the broader scientific program and intended
 architecture.
 
+## Working mode
+
+Open `Models4PT.code-workspace` for routine Models4PT development. Keep implementation,
+tests, case studies, and scientific representation decisions owned and validated here.
+Open `~/Projects/clinical-inquiry-ecosystem.code-workspace` for the integration
+checkpoints defined in the [Integration Guide](INTEGRATION.md), rather than keeping all
+repositories in scope for every coding session.
+
+Develop each milestone as a narrow vertical workflow:
+
+1. State the scientific distinction or user workflow being tested.
+2. Add the smallest behavior-level test that protects that distinction.
+3. Implement through the public application or domain boundary.
+4. Exercise the representation against a focused case study when applicable.
+5. Record unresolved scientific questions without prematurely making exploratory types
+  permanent API or persistence contracts.
+
+For a change to a shared representation, export, or public API, completion also requires:
+
+- an explicit schema version and compatibility decision;
+- a representative serialized fixture without patient data;
+- validation using only the public contract; and
+- a review from the ecosystem workspace of what crosses the repository boundary.
+
 ## Supported tools
 
 - Python 3.11 is the development and container baseline.
@@ -184,3 +208,4 @@ Changes to scientific representations should also be checked against:
 
 - `doc/project-foundation/FOUNDATIONAL_PRINCIPLES.md`
 - `doc/project-foundation/SYSTEM BOUNDARIES.md`
+- `doc/INTEGRATION.md`
