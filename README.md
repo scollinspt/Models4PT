@@ -149,6 +149,33 @@ The longer research and software roadmap is described in the
 [Software Project](doc/project-foundation/Models4PT_Software_Project.md) and
 [Research Program](doc/project-foundation/Models4PT_Research_Program.md).
 
+## Design log
+
+### 2026-09-21: Linear algebra orientation for Models4PT
+
+Models4PT is the integrative hub between research literature and mechanistic
+knowledge from projects such as Physiolog, and downstream patient-specific
+reasoning in the Clinical Inference Engine. This position creates a need for a
+strong core of knowledge representations, data structures, and algorithms.
+
+A possible **LA4PT** learning series was discussed as a way to build the
+project author's working knowledge of linear algebra while helping physical
+therapists understand the computational foundations of Models4PT. Linear
+algebra connects directly to graph representations, machine learning,
+embeddings, probabilistic models, dynamical systems, and simulation. However,
+matrix representations do not by themselves determine the scientific meaning
+of concepts and relationships or preserve evidence, provenance, uncertainty,
+review, and revision history. Models4PT therefore still requires explicit
+semantic and epistemic representations even when their implementations use
+linear algebra internally.
+
+Current direction: retain LA4PT as a possible educational component of
+Models4PT rather than a separate project or domain. Its exact role—prerequisite,
+companion curriculum, design notebook, or orientation to the project's
+computational foundations—remains undecided. No LA4PT implementation or
+repository changes are planned yet; the idea is intentionally deferred for
+further reflection and evidence from continued Models4PT development.
+
 ## License
 
 Models4PT is released under the [MIT License](LICENSE.txt).
